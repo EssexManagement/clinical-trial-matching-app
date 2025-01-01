@@ -66,6 +66,11 @@ module.exports = {
   serverRuntimeConfig: {
     sessionSecretKey: process.env.SESSION_SECRET_KEY,
   },
+  // logging: {
+  //   fetches: {
+  //     fullUrl: true,
+  //   },
+  // },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

@@ -1,0 +1,1 @@
+Send Location Data is false in production because the trial sites are concerned about sending PHI. So the search params will never be used. Instead only the default zip and travel distance will be used with the assumption that the search params will be used as a post-filter.

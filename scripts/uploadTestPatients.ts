@@ -187,7 +187,8 @@ const main = (): void => {
 
   const args = process.argv.slice(2);
   const dump = args.length !== 0 && args[0] === '--dump';
-  const uploadR4 = (baseURL: string) => upload('R4', baseURL, path.join(__dirname, 'r4_test_patients'), dump);
+  const uploadR4 = (baseURL: string) =>
+    upload('R4', baseURL, path.join(__dirname, '..', 'src', 'utils', 'r4_test_patients'), dump);
 
   uploadR4(SMART_HEALTH_IT_ENDPOINT);
 };
