@@ -244,7 +244,7 @@ cd "$CTMS_DIR"
 # Bootstrap the CTMS directory if necessary
 if ! [ -f "$CTMS_DIR/clinical-trial-matching-app/scripts/install.js" ] ; then
   pushd "$CTMS_DIR"
-  git clone 'https://github.com/mcode/clinical-trial-matching-app.git'
+  git clone 'https://github.com/EssexManagement/clinical-trial-matching-app.git'
   popd
 fi
 sudo -u "$CTMS_USER" node "$CTMS_DIR/clinical-trial-matching-app/install.js" --install-dir "$CTMS_DIR" --extra-ca-certs "$EXTRA_CA_CERTS_FILE" $*

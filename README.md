@@ -4,9 +4,9 @@
 
 - [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 20.x)
 - At least one of the following matching services:
-  - [BreastCancerTrials](https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org)
-  - [TrialScope](https://github.com/mcode/clinical-trial-matching-service-trialscope)
-  - [TrialJectory](https://github.com/mcode/clinical-trial-matching-service-trialjectory)
+  - [BreastCancerTrials](https://github.com/EssexManagement/clinical-trial-matching-service-breastcancertrials.org)
+  - [TrialScope](https://github.com/EssexManagement/clinical-trial-matching-service-trialscope)
+  - [TrialJectory](https://github.com/EssexManagement/clinical-trial-matching-service-trialjectory)
 
 ## Testing with a launcher
 
