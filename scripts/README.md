@@ -126,7 +126,7 @@ These options control the Linux installer:
 
 ## wrappers.json Configuration
 
-`wrappers.json` is a simple JSON file. The base value is an object, where each key gives the name a wrapper will be installed to. This name is also used to determine the GitHub URL of the wrapper, which currently must be `https://github.com/mcode/clinical-trial-matching-service-<name>.git`. (This will likely be updated to allow a specific URL to be used to override the default.)
+`wrappers.json` is a simple JSON file. The base value is an object, where each key gives the name a wrapper will be installed to. This name is also used to determine the GitHub URL of the wrapper, which currently must be `https://github.com/EssexManagement/clinical-trial-matching-service-<name>.git`. (This will likely be updated to allow a specific URL to be used to override the default.)
 
 The value for each key may either be `false` or `null` to skip that wrapper (when overriding from `wrappers.local.json`), or an object with the following keys:
 

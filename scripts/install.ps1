@@ -327,7 +327,7 @@ EnableFSMonitor=Disabled
             # If the script does not exist, we need to clone it.
             Push-Location $this.InstallPath
             try {
-                git clone 'https://github.com/mcode/clinical-trial-matching-app.git'
+                git clone 'https://github.com/EssexManagement/clinical-trial-matching-app.git'
                 if ($LastExitCode -ne 0) {
                     throw 'Failed to clone webapp directory (could not bootstrap remaining install)'
                 }

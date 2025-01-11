@@ -285,7 +285,10 @@ class CTMSWebApp {
 
   async needsDependenciesUpdated(installer) {
     // Really this could just return the promise directly, but it reads more clearly with the async/await
-    return await isFileOutOfDate(installer.joinPath(this.path, 'package.json'), installer.joinPath(this.path, 'node_modules'));
+    return await isFileOutOfDate(
+      installer.joinPath(this.path, 'package.json'),
+      installer.joinPath(this.path, 'node_modules')
+    );
   }
 
   async runInstallDependencyCommand(installer) {
@@ -458,7 +461,7 @@ class CTMSWrapper extends CTMSWebApp {
       name,
       `clinical-trial-matching-service-${name}`,
       branch,
-      `https://github.com/mcode/clinical-trial-matching-service-${name}.git`
+      `https://github.com/EssexManagement/clinical-trial-matching-service-${name}.git`
     );
     this.localEnv = localEnv;
   }
@@ -500,7 +503,7 @@ class CTMSApp extends CTMSWebApp {
       'clinical-trial-matching-app',
       'clinical-trial-matching-app',
       CTM_APP_BRANCH,
-      'https://github.com/mcode/clinical-trial-matching-app.git'
+      'https://github.com/EssexManagement/clinical-trial-matching-app.git'
     );
   }
 
@@ -822,7 +825,9 @@ ${frontendConfig}
       const newInstallScriptStats = await fs.stat(scriptPath);
       if (installScriptStats.mtime < newInstallScriptStats.mtime) {
         console.log('Install script may have updated! Attempting to relaunch installer.');
-        console.log(`(Old mtime was ${installScriptStats.mtime.toString()}, new is ${newInstallScriptStats.mtime.toString()}.)`);
+        console.log(
+          `(Old mtime was ${installScriptStats.mtime.toString()}, new is ${newInstallScriptStats.mtime.toString()}.)`
+        );
         // Concat creates a new copy of the array
         const newArgs = process.argv.slice(1);
         newArgs.push('--no-install-update-check');

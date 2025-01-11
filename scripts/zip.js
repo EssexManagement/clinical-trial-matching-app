@@ -54,6 +54,10 @@ class CTMSWebApp {
     if (/\.env.*\.local$/.test(file.name)) {
       return true;
     }
+    // Ignore ide files
+    if (/\.vscode/.test(file.name)) {
+      return true;
+    }
     // Ignore web.config
     if (file.name == 'web.config') {
       return true;
@@ -109,7 +113,7 @@ class Zipper {
     this.path = path;
     this.zipOutputStream = new ZipArchiveOutputStream({ zlib: { level: 9 } });
     let writeStream = fs.createWriteStream(destination);
-    const handleError = (error) => {
+    const handleError = error => {
       if (this.verbose) {
         console.log('Error in ZIP: %o', error);
       }
@@ -181,7 +185,7 @@ class Zipper {
       }
       let readStream = fs.createReadStream(file);
       let resolved = false;
-      readStream.on('error', (err) => {
+      readStream.on('error', err => {
         if (resolved) {
           return;
         }
