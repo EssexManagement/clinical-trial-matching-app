@@ -1,0 +1,1 @@
+After ranking the most occurring results, the next step is to equally disperse the results from each of the matching services until `resultsMax` is reached. The modulo operator selects a different matching service each iteration.
