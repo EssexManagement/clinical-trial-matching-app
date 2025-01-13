@@ -37,3 +37,4 @@ sessions.db
 # IIS node local files
 /iisnode
 /web.config
+scripts/opde.out.json
