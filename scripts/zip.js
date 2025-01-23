@@ -55,7 +55,11 @@ class CTMSWebApp {
       return true;
     }
     // Ignore ide files
-    if (/\.vscode/.test(file.name)) {
+    if (file.path.indexOf('.vscode') >= 0) {
+      return true;
+    }
+    // Ignore local script files
+    if (file.path.indexOf(path.join('scripts', 'local')) >= 0) {
       return true;
     }
     // Ignore web.config

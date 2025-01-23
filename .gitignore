@@ -37,4 +37,5 @@ sessions.db
 # IIS node local files
 /iisnode
 /web.config
-scripts/opde.out.json
+scripts/local/*.json
+scripts/local/http_cache.sqlite
