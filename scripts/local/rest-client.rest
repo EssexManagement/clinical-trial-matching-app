@@ -1,0 +1,20 @@
+POST https://stage-webapi.trialjectory.com/mitreMatches
+  content-type: application/json; charset=UTF-8
+  user-agent: Clinical-Trial-Matching-Wrapper
+
+  {
+    "lat":"32.813992",
+    "lng":"-96.842808",
+    "distance":null,
+    "biomarkers":null,
+    "stage":null,
+    "cancerName":"crc",
+    "cancerType":"colon",
+    "cancerSubType":null,
+    "ecog":null,
+    "karnofsky":null,
+    "medications":["adagrasib"],
+    "procedures":null,
+    "metastasis":[],
+    "age":66
+  }

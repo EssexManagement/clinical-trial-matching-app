@@ -53,16 +53,16 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
   ];
   progress('Fetching patient data...', 0, tasks.length);
 
-  return buildPatientData(
-    (await Promise.all(
-      tasks.map(promise =>
-        promise.then(result => {
-          progress(1);
-          return result;
-        })
-      )
-    )) as FetchTaskType
-  );
+  const patientElements = (await Promise.all(
+    tasks.map(promise =>
+      promise.then(result => {
+        progress(1);
+        return result;
+      })
+    )
+  )) as FetchTaskType;
+
+  return buildPatientData(patientElements);
 };
 
 /**

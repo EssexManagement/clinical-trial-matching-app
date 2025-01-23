@@ -48,7 +48,7 @@
         },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample01.html\">Generated Summary: id: a123; Patient B TrialMatching ; gender: female; birthDate: 1959-01-01</a></p><h3>Stages</h3><table class=\"grid\"><tr><td>-</td><td><b>Summary</b></td><td><b>Assessment</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://cancerstaging.org 4}\">IV</span></td><td><a href=\"Observation-mCODETrialMatchingTNMClinicalStageGroupExample01.html\">Generated Summary: <span title=\"Codes: {http://loinc.org 21908-9}\">Stage group.clinical Cancer</span>; <span title=\"Codes: {http://cancerstaging.org 4}\">IV</span>; <span title=\"Codes: {http://ncimeta.nci.nih.gov C146985}\">AJCC Cancer Staging Manual 8th Edition</span></a></td></tr></table></div>"
+          "div": "<div>Colon</div>"
         },
         "clinicalStatus": {
           "coding": [
@@ -82,8 +82,8 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "408643008",
-              "display": "Infiltrating duct carcinoma of breast (disorder)"
+              "code": "93761005",
+              "display": "Primary malignant neoplasm of colon (disorder)"
             }
           ]
         },
@@ -92,8 +92,8 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "76752008",
-                "display": "Breast structure (body structure)"
+                "code": "71854001",
+                "display": "Colon structure (body structure)"
               }
             ]
           }
@@ -709,22 +709,23 @@
     {
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatementPatientExample01",
       "resource": {
-        "resourceType": "MedicationStatement",
+        "resourceType": "MedicationRequest",
         "id": "mCODETrialMatchingCancerMedicationStatementPatientExample01",
         "meta": {
-          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request"]
         },
         "text": {
           "status": "generated",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1163443}\">leuprolide Injetable Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample01.html\">Generated Summary: id: a123; Patient B TrialMatching ; gender: female; birthDate: 1959-01-01</a></p><p><b>effective</b>: 2019-04-01</p></div>"
         },
         "status": "completed",
+        "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1163443",
-              "display": "leuprolide Injetable Product"
+              "code": "2625882",
+              "display": "adagrasib"
             }
           ]
         },
@@ -735,28 +736,29 @@
       },
       "request": {
         "method": "POST",
-        "url": "MedicationStatement"
+        "url": "MedicationRequest"
       }
     },
     {
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement02PatientExample01",
       "resource": {
-        "resourceType": "MedicationStatement",
+        "resourceType": "MedicationRequest",
         "id": "mCODETrialMatchingCancerMedicationStatement02PatientExample01",
         "meta": {
-          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-request"]
         },
         "text": {
           "status": "generated",
           "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1156671}\">fulvestrant Injectable Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample01.html\">Generated Summary: id: a123; Patient B TrialMatching ; gender: female; birthDate: 1959-01-01</a></p><p><b>effective</b>: 2019-04-01</p></div>"
         },
         "status": "completed",
+        "intent": "order",
         "medicationCodeableConcept": {
           "coding": [
             {
               "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-              "code": "1156671",
-              "display": "fulvestrant Injectable Product"
+              "code": "2670179",
+              "display": "Fruquintinib"
             }
           ]
         },
@@ -767,7 +769,7 @@
       },
       "request": {
         "method": "POST",
-        "url": "MedicationStatement"
+        "url": "MedicationRequest"
       }
     },
     {

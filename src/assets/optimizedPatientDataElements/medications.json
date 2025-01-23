@@ -473,6 +473,102 @@
   },
   {
     "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625882",
+    "display": "Adagrasib",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625913",
+    "display": "Adagrasib 200 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625914",
+    "display": "Adagrasib Oral Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625915",
+    "display": "Adagrasib Pill",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625916",
+    "display": "Adagrasib Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625917",
+    "display": "Adagrasib 200 Mg Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625919",
+    "display": "Adagrasib 200 Mg [Krazati]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625922",
+    "display": "Adagrasib Oral Tablet [Krazati]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625923",
+    "display": "Adagrasib 200 Mg Oral Tablet [Krazati]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625918",
+    "display": "Krazati",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625920",
+    "display": "Krazati Oral Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2625921",
+    "display": "Krazati Pill",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Adagrasib", "Krazati"]
+  },
+  {
+    "entryType": "medications",
     "cancerType": ["breast", "lung"],
     "code": "224905",
     "display": "Trastuzumab",
@@ -10517,6 +10613,134 @@
     "display": "Faslodex Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
     "category": ["Fulvestrant"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670179",
+    "display": "Fruquintinib",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670180",
+    "display": "Fruquintinib 1 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670181",
+    "display": "Fruquintinib Oral Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670182",
+    "display": "Fruquintinib Pill",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670183",
+    "display": "Fruquintinib Oral Capsule",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670184",
+    "display": "Fruquintinib 1 Mg Oral Capsule",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670186",
+    "display": "Fruquintinib 1 Mg [Fruzaqla]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670189",
+    "display": "Fruquintinib Oral Capsule [Fruzaqla]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670190",
+    "display": "Fruquintinib 1 Mg Oral Capsule [Fruzaqla]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670195",
+    "display": "Fruquintinib 5 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670196",
+    "display": "Fruquintinib 5 Mg Oral Capsule",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670197",
+    "display": "Fruquintinib 5 Mg [Fruzaqla]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670198",
+    "display": "Fruquintinib 5 Mg Oral Capsule [Fruzaqla]",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670185",
+    "display": "Fruzaqla",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670187",
+    "display": "Fruzaqla Oral Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["colon"],
+    "code": "2670188",
+    "display": "Fruzaqla Pill",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Fruquintinib", "Fruzaqla"]
   },
   {
     "entryType": "medications",

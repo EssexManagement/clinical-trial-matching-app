@@ -80,7 +80,10 @@ export const fetchResources = async <T extends FhirResource>(
   fhirClient: Client,
   resourceType: T['resourceType'],
   parameters?: Record<string, string>
-): Promise<T[]> => (await fetchBundleEntries(fhirClient, resourceType, parameters)).map<T>(entry => entry.resource);
+): Promise<T[]> => {
+  const res = (await fetchBundleEntries(fhirClient, resourceType, parameters)).map<T>(entry => entry.resource);
+  return res;
+};
 
 /**
  * Retrieves all known medications from the current patient.
