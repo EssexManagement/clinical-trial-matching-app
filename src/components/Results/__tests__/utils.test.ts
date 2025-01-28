@@ -67,11 +67,11 @@ describe('getType()', () => {
       status: 'active',
       category: [
         {
-          text: 'Study Type: [Demo.Study]',
+          text: `Study Type: [\[[.Demo.Study.]\]]`,
         },
       ],
     });
-    expect(result).toEqual({ name: '(DemoStudy)', label: '[Demo.Study]' });
+    expect(result).toEqual({ name: '(DemoStudy)', label: `[\[[.Demo.Study.]\]]` });
   });
   it('skips unknown categories', () => {
     const result = getType({
