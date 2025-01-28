@@ -85,7 +85,7 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
 export const getSponsor = (study: ResearchStudy): ContactProps | undefined =>
   getContact(findContainedResourceByReference<Organization>(study, 'Organization', study.sponsor?.reference));
 
-export const getStatus = (study: ResearchStudy): StatusProps => {
+const getStatus = (study: ResearchStudy): StatusProps => {
   const label = study.status
     ?.replace(/-/g, ' ')
     .replace(/\w+\b(?<!\b(to|and))/g, word => word[0].toUpperCase() + word.slice(1));

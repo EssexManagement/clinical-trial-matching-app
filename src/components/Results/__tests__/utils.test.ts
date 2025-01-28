@@ -1,4 +1,4 @@
-import { getArmsAndInterventions, getContact, getSponsor, getType, getStatus, getBestContact } from '../utils';
+import { getArmsAndInterventions, getContact, getSponsor, getType, getBestContact } from '../utils';
 
 describe('getContact', () => {
   it('returned undefined if given undefined', () => {
