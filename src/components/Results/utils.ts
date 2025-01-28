@@ -85,7 +85,7 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
 export const getSponsor = (study: ResearchStudy): ContactProps | undefined =>
   getContact(findContainedResourceByReference<Organization>(study, 'Organization', study.sponsor?.reference));
 
-const getStatus = (study: ResearchStudy): StatusProps => {
+export const getStatus = (study: ResearchStudy): StatusProps => {
   const label = study.status
     ?.replace(/-/g, ' ')
     .replace(/\w+\b(?<!\b(to|and))/g, word => word[0].toUpperCase() + word.slice(1));
@@ -123,7 +123,11 @@ export const getType = (study: ResearchStudy): TypeProps => {
     // React Hook Form uses array brackets and periods to create nested structures.
     // We use the study type to create checkbox filters in the Sidebar.
     // Unless we remove those characters, passing in the Study Type as the Controller.name will break its state.
-    const matchWithoutIllegalCharacters = match.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
+    let matchWithoutIllegalCharacters = match.replace(/\./g, '');
+    if (/\[/.test(matchWithoutIllegalCharacters) || /\]/.test(matchWithoutIllegalCharacters)) {
+      matchWithoutIllegalCharacters = matchWithoutIllegalCharacters.replace(/\[/g, '').replace(/\]/g, '');
+      matchWithoutIllegalCharacters = `(${matchWithoutIllegalCharacters})`;
+    }
     if (matchWithoutIllegalCharacters) {
       return { name: matchWithoutIllegalCharacters, label: match };
     }

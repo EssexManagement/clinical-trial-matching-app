@@ -1,4 +1,4 @@
-import { getArmsAndInterventions, getContact, getSponsor, getType, getBestContact } from '../utils';
+import { getArmsAndInterventions, getContact, getSponsor, getType, getStatus, getBestContact } from '../utils';
 
 describe('getContact', () => {
   it('returned undefined if given undefined', () => {
@@ -67,11 +67,11 @@ describe('getType()', () => {
       status: 'active',
       category: [
         {
-          text: 'Study Type: [Demo.Study]',
+          text: `Study Type: [\[[.Demo.Study.]\]]`,
         },
       ],
     });
-    expect(result).toEqual({ name: '(DemoStudy)', label: '[Demo.Study]' });
+    expect(result).toEqual({ name: '(DemoStudy)', label: `[\[[.Demo.Study.]\]]` });
   });
   it('skips unknown categories', () => {
     const result = getType({
