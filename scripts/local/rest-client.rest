@@ -18,3 +18,6 @@ POST https://stage-webapi.trialjectory.com/mitreMatches
     "metastasis":[],
     "age":66
   }
+
+### GET ClinicalTrials.gov study
+GET https://clinicaltrials.gov/api/v2/studies/NCT03746431
