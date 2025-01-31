@@ -2,7 +2,6 @@ name: Copy latest release
 
 on:
   release:
-    types: [published]
 
 permissions:
   contents: write
@@ -13,6 +12,8 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: 'master'
       - run: |
           tagName=$(gh release list --exclude-pre-releases --exclude-drafts --json tagName,isLatest -q '.[] | select(.isLatest == true) | .tagName')
           if [[ -z $tagName ]]; then
