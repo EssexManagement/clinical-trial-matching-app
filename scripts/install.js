@@ -313,7 +313,7 @@ class CTMSWebApp {
       mode = '>>';
     }
     await runPowerShell(`
-$Path=${escapePowerShell(installer.joinPath(this.path))}
+$Path="${escapePowerShell(installer.joinPath(this.path))}"
 if (-Not (Test-Path $Path)) {
     Write-Output "ENOENT $Path"
 } else {
