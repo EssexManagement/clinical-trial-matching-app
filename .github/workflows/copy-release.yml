@@ -25,3 +25,5 @@ jobs:
           git add .
           git commit -m "save latest release notes"
           git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
