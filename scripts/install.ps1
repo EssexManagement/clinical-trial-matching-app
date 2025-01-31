@@ -80,10 +80,6 @@ class CTMSPreReq {
 
     [void]Install([CTMSInstaller]$Installer) {
         $Installer.StartActivity("Install $($this.Name) $($this.Version)...")
-        if ($this.Version -eq $this.CurrentVersion) {
-            $Installer.Info("$($this.Name) $($this.Version) appears to already be installed. Skipping download/install.")
-            return
-        }
         $dest = "$($Installer.InstallersPath)\$($this.Filename)"
         if (Test-Path -Path $dest) {
             $Installer.Info("$($this.Filename) exists, not re-downloading.")
@@ -99,6 +95,11 @@ class CTMSPreReq {
                 # And rethrow
                 throw $_
             }
+        }
+        if ($this.Version -eq $this.CurrentVersion) {
+          # Install the executable, but don't run install it
+            $Installer.Info("$($this.Name) $($this.Version) appears to already be installed. Skipping download/install.")
+            return
         }
         $installer.StartSubtask("Installing $($this.Name) $($this.Version)...")
         if ($this.Filename.EndsWith(".msi")) {

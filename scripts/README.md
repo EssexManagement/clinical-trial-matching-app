@@ -144,7 +144,7 @@ You cannot run `zip.js` from within the scripts directory, as this will cause it
 `zip.js` requires the `compress-commons` library. This can either be installed globally:
 
 ```sh
-npm install -g compress-commons
+npm install -g compress-commons@^6
 ```
 
 Or it can be installed locally within a directory with the `zip.js` file, such as:
@@ -153,7 +153,7 @@ Or it can be installed locally within a directory with the `zip.js` file, such a
 MKDIR C:\CTMS\zip
 CD C:\CTMS\zip
 COPY C:\CTMS\clinical-trial-matching-app\scripts\zip.js .
-npm install compress-commons
+npm install compress-commons@^6
 ```
 
 This should produce warnings about `package.json` not existing in this directory, but it should still install the necessary dependency.
