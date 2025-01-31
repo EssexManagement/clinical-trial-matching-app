@@ -303,6 +303,27 @@ class CTMSWebApp {
     }
   }
 
+  /**
+   * @param {CTMSInstaller} installer
+   */
+  async joinReleaseNotes(installer) {
+    const append = this instanceof CTMSWrapper;
+    let mode = '>';
+    if (append) {
+      mode = '>>';
+    }
+    await runPowerShell(`
+$Path=${escapePowerShell(installer.joinPath(this.path))}
+if (-Not (Test-Path $Path)) {
+    Write-Output "ENOENT $Path"
+} else {
+    $AppComponent=Split-Path -leaf $Path
+    Write-Output "# $AppComponent" ${mode} RELEASE-NOTES.md
+    Write-Output "-------------------------------------------------------------------------" >> RELEASE-NOTES.md
+    Get-Content "$Path\\LATEST-RELEASE.md" >> RELEASE-NOTES.md
+}`);
+  }
+
   async runCleanCommand(installer) {
     await exec(NPM_COMMAND, ['run', 'clean'], { cwd: installer.joinPath(this.path) });
   }
@@ -320,6 +341,7 @@ class CTMSWebApp {
 
   /**
    * Runs through every part of the install process
+   * @param {CTMSInstaller} installer
    */
   async install(installer) {
     installer.startActivity(`Install ${this.name}...`);
@@ -332,6 +354,7 @@ class CTMSWebApp {
         await this.cloneBranch(installer);
       }
       await this.installDependencies(installer);
+      await this.joinReleaseNotes(installer);
     }
     if (!installer.skipBuild) {
       await this.build(installer);
@@ -668,6 +691,7 @@ class CTMSInstaller {
         }
       }
       // Once here, use the configuration
+      /** @type {Array<CTMSWrapper>} */
       this.wrappers = [];
       for (const k in wrapperConfig) {
         const config = wrapperConfig[k];
