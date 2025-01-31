@@ -1,7 +1,6 @@
 name: Copy latest release
 
-on:
-  release:
+on: release
 
 permissions:
   contents: write
