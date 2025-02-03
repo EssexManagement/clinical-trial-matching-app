@@ -313,6 +313,7 @@ class CTMSWebApp {
       mode = '>>';
     }
     await runPowerShell(`
+Push-Location "${escapePowerShell(installer.installPath)}"
 $Path="${escapePowerShell(installer.joinPath(this.path))}"
 if (-Not (Test-Path $Path)) {
     Write-Output "ENOENT $Path"
@@ -321,7 +322,8 @@ if (-Not (Test-Path $Path)) {
     Write-Output "# $AppComponent" ${mode} RELEASE-NOTES.md
     Write-Output "-------------------------------------------------------------------------" >> RELEASE-NOTES.md
     Get-Content "$Path\\LATEST-RELEASE.md" >> RELEASE-NOTES.md
-}`);
+}
+Pop-Location`);
   }
 
   async runCleanCommand(installer) {
