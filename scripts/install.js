@@ -308,22 +308,15 @@ class CTMSWebApp {
    */
   async joinReleaseNotes(installer) {
     const append = this instanceof CTMSWrapper;
-    let mode = '>';
+    const args = [
+      'powershell',
+      ['-File', installer.joinPath('.\\clinical-trial-matching-app\\scripts\\join-release-notes.ps1'), '-NotesPath', installer.joinPath(this.path)],
+      {}
+    ];
     if (append) {
-      mode = '>>';
+      args[1].push('-Append');
     }
-    await runPowerShell(`
-Push-Location "${escapePowerShell(installer.installPath)}"
-$Path="${escapePowerShell(installer.joinPath(this.path))}"
-if (-Not (Test-Path $Path)) {
-    Write-Output "ENOENT $Path"
-} else {
-    $AppComponent=Split-Path -leaf $Path
-    Write-Output "# $AppComponent" ${mode} RELEASE-NOTES.md
-    Write-Output "-------------------------------------------------------------------------" >> RELEASE-NOTES.md
-    Get-Content "$Path\\LATEST-RELEASE.md" >> RELEASE-NOTES.md
-}
-Pop-Location`);
+    await exec(...args);
   }
 
   async runCleanCommand(installer) {
@@ -356,7 +349,6 @@ Pop-Location`);
         await this.cloneBranch(installer);
       }
       await this.installDependencies(installer);
-      await this.joinReleaseNotes(installer);
     }
     if (!installer.skipBuild) {
       await this.build(installer);
@@ -416,8 +408,8 @@ Pop-Location`);
     passenger_app_root ${escapeNginxConfig(installer.joinPath(this.path))};
     passenger_startup_file ${this.getIndexScript(installer)};
 ${Object.entries(this.getAppSettings(installer))
-  .map(([k, v]) => `    passenger_env_var ${escapeNginxConfig(k)} ${escapeNginxConfig(v)};`)
-  .join('\n')}
+        .map(([k, v]) => `    passenger_env_var ${escapeNginxConfig(k)} ${escapeNginxConfig(v)};`)
+        .join('\n')}
 ${this.getExtraNginxSettings(installer)}
   }
 `;
@@ -434,14 +426,14 @@ ${this.getExtraNginxSettings(installer)}
   <appSettings>
     <clear />
 ${Object.entries(this.getAppSettings(installer))
-  .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
-  .join('')}
+        .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
+        .join('')}
   </appSettings>
   <system.webServer>
     <handlers>
       <add name="${escapeXML(this.name)}-iisnode" path="${escapeXML(
-      this.getIndexScript(installer)
-    )}" verb="*" modules="iisnode" />
+          this.getIndexScript(installer)
+        )}" verb="*" modules="iisnode" />
     </handlers>
     <rewrite>
       <rules>
@@ -731,6 +723,8 @@ class CTMSInstaller {
       this.startActivity(`Installing ${wrapper.name}...`);
       try {
         await wrapper.install(this);
+        console.log(`Joining release notes for ${wrapper.name}`);
+        await wrapper.joinReleaseNotes(this);
         this.installedWrappers.push(wrapper);
       } catch (ex) {
         this.error(`Unable to install ${wrapper.name}: ${ex}`);
@@ -742,6 +736,8 @@ class CTMSInstaller {
 
   async installFrontend() {
     await this.frontend.install(this);
+    console.log(`Joining release notes for ${this.frontend.name}`);
+    await this.frontend.joinReleaseNotes(this);
   }
 
   async configureWebServer() {
