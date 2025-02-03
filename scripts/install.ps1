@@ -86,7 +86,9 @@ class CTMSPreReq {
         } else {
             $Installer.StartSubtask("Downloading $($this.Name) $($this.Version)...")
             try {
+                $ProgressPreference = 'SilentlyContinue'
                 Invoke-WebRequest -Uri $this.Uri -OutFile $dest
+                $ProgressPreference = 'Continue'
             } catch {
                 Write-Error "Failed to install prerequiste: $_"
                 if ($_.ToString() -match "Could not establish trust relationship") {
