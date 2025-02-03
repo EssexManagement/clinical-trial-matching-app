@@ -275,7 +275,7 @@ async function main(args) {
   }
   if (!argFlags['--exclude-install-scripts']) {
     console.log('  Adding install script data...');
-    const installScripts = ['install.ps1', 'test.ps1', 'wrappers.json'];
+    const installScripts = ['install.ps1', 'test.ps1', 'wrappers.json', 'RELEASE-NOTES.md'];
     try {
       if ((await fsp.stat(path.join(installPath, 'wrappers.local.json'))).isFile()) {
         installScripts.push('wrappers.local.json');

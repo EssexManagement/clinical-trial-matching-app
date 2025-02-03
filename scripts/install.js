@@ -310,8 +310,13 @@ class CTMSWebApp {
     const append = this instanceof CTMSWrapper;
     const args = [
       'powershell',
-      ['-File', installer.joinPath('.\\clinical-trial-matching-app\\scripts\\join-release-notes.ps1'), '-NotesPath', installer.joinPath(this.path)],
-      {}
+      [
+        '-File',
+        installer.joinPath('.\\clinical-trial-matching-app\\scripts\\join-release-notes.ps1'),
+        '-NotesPath',
+        installer.joinPath(this.path),
+      ],
+      {},
     ];
     if (append) {
       args[1].push('-Append');
@@ -347,6 +352,8 @@ class CTMSWebApp {
     } else {
       if (!installer.skipGitPull) {
         await this.cloneBranch(installer);
+        console.log(`Joining release notes for ${this.name}`);
+        await this.joinReleaseNotes(installer);
       }
       await this.installDependencies(installer);
     }
@@ -408,8 +415,8 @@ class CTMSWebApp {
     passenger_app_root ${escapeNginxConfig(installer.joinPath(this.path))};
     passenger_startup_file ${this.getIndexScript(installer)};
 ${Object.entries(this.getAppSettings(installer))
-        .map(([k, v]) => `    passenger_env_var ${escapeNginxConfig(k)} ${escapeNginxConfig(v)};`)
-        .join('\n')}
+  .map(([k, v]) => `    passenger_env_var ${escapeNginxConfig(k)} ${escapeNginxConfig(v)};`)
+  .join('\n')}
 ${this.getExtraNginxSettings(installer)}
   }
 `;
@@ -426,14 +433,14 @@ ${this.getExtraNginxSettings(installer)}
   <appSettings>
     <clear />
 ${Object.entries(this.getAppSettings(installer))
-        .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
-        .join('')}
+  .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
+  .join('')}
   </appSettings>
   <system.webServer>
     <handlers>
       <add name="${escapeXML(this.name)}-iisnode" path="${escapeXML(
-          this.getIndexScript(installer)
-        )}" verb="*" modules="iisnode" />
+      this.getIndexScript(installer)
+    )}" verb="*" modules="iisnode" />
     </handlers>
     <rewrite>
       <rules>
@@ -723,8 +730,6 @@ class CTMSInstaller {
       this.startActivity(`Installing ${wrapper.name}...`);
       try {
         await wrapper.install(this);
-        console.log(`Joining release notes for ${wrapper.name}`);
-        await wrapper.joinReleaseNotes(this);
         this.installedWrappers.push(wrapper);
       } catch (ex) {
         this.error(`Unable to install ${wrapper.name}: ${ex}`);
@@ -736,8 +741,6 @@ class CTMSInstaller {
 
   async installFrontend() {
     await this.frontend.install(this);
-    console.log(`Joining release notes for ${this.frontend.name}`);
-    await this.frontend.joinReleaseNotes(this);
   }
 
   async configureWebServer() {
