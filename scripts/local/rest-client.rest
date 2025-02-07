@@ -1,6 +1,7 @@
+### GET from TrialJectory
 POST https://stage-webapi.trialjectory.com/mitreMatches
-  content-type: application/json; charset=UTF-8
-  user-agent: Clinical-Trial-Matching-Wrapper
+content-type: application/json; charset=UTF-8
+user-agent: Clinical-Trial-Matching-Wrapper
 
   {
     "lat":"32.813992",
@@ -21,3 +22,66 @@ POST https://stage-webapi.trialjectory.com/mitreMatches
 
 ### GET ClinicalTrials.gov study
 GET https://clinicaltrials.gov/api/v2/studies/NCT03746431
+
+### Carebox Auth Token
+curl --request POST \
+  --url https://stg-auth.emergingmed.com/oauth/token \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --header 'user-agent: cURL' \
+  --data 'grant_type=client_credentials' \
+  --data 'client_id={{cb_client_id}}' \
+  --data 'client_secret={{cb_client_secret}}'
+
+### GET From Carebox
+POST https://stg-api.emergingmed.com/v2.1/trials/directMatch
+content-type: application/json
+Authorization: Bearer {{cb_token}}
+
+  {
+    "page": 1,
+    "pageSize": 50,
+    "fields": [
+      "trialId",
+      "nctId",
+      "fullTitle",
+      "shortTitle",
+      "status",
+      "phase",
+      "sites",
+      "overallContacts"
+    ],
+    "filter": {
+      "condition": {
+        "valueSetId": "2.16.840.1.113883.6.96",
+        "valueId": "255072001"
+      },
+      "countries": ["US"],
+      "eligibility": [
+        {
+          "fieldId": "6",
+          "mode": "",
+          "value": "01012001"
+        }
+      ],
+      "distance": {
+        "distance": 1500,
+        "distanceUnit": "mi",
+        "from": {
+          "lat": 39.461302,
+          "lon": -98.325251
+        }
+      }
+    },
+    "sort": [
+      {
+        "field": "distance",
+        "order": "asc"
+      }
+    ],
+    "origin": {
+      "from": {
+        "lat": 39.461302,
+        "lon": -98.325251
+      }
+    }
+  }
