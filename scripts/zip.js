@@ -3,7 +3,7 @@
 // Requires compress-commons, not included by default
 // The install path for CTMS and its various software
 let installPath = process.platform == 'win32' ? 'C:\\CTMS' : '/opt/ctms';
-let wrappers = ['breastcancertrials.org', 'carebox', 'lungevity', 'trialjectory'];
+let wrappers = ['breastcancertrials.org', 'carebox', 'trialjectory'];
 let destination = 'ctms.zip';
 let skipNodeModules = false;
 
@@ -106,7 +106,6 @@ class CTMSWrapper extends CTMSWebApp {
 const wrapperConfig = {
   'breastcancertrials.org': new CTMSWrapper('breastcancertrials.org'),
   carebox: new CTMSWrapper('carebox'),
-  lungevity: new CTMSWrapper('lungevity'),
   trialjectory: new CTMSWrapper('trialjectory'),
 };
 
