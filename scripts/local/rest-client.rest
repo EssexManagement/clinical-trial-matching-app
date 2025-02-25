@@ -7,15 +7,15 @@ user-agent: Clinical-Trial-Matching-Wrapper
     "lat":"32.813992",
     "lng":"-96.842808",
     "distance":null,
-    "biomarkers":null,
+    "biomarkers":[],
     "stage":null,
-    "cancerName":"crc",
-    "cancerType":"colon",
+    "cancerName":"ovarian",
+    "cancerType":null,
     "cancerSubType":null,
     "ecog":null,
     "karnofsky":null,
-    "medications":["adagrasib"],
-    "procedures":null,
+    "medications":[],
+    "procedures":[],
     "metastasis":[],
     "age":66
   }
@@ -53,7 +53,7 @@ Authorization: Bearer {{cb_token}}
     "filter": {
       "condition": {
         "valueSetId": "2.16.840.1.113883.6.96",
-        "valueId": "255072001"
+        "valueId": "93934004"
       },
       "countries": ["US"],
       "eligibility": [
