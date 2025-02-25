@@ -37,6 +37,13 @@ const {
 } = getConfig() as GetConfig;
 
 /**
+ * @description it may be that the TrialID is not an NCT ID (i.e., from clinicaltrials.gov). This is just for
+ * type hints.
+ */
+type TrialID = `NCT${string}`;
+type MatchingService = 'breastCancerTrials' | 'carebox' | 'trialjectory';
+
+/**
  * API/Query handler For clinical-trial-search
  *
  * @param req Should contain { patient, user, searchParams }
@@ -154,9 +161,9 @@ async function callWrappers(
   const errors = wrapperResults.filter(result => result.status == 500);
 
   // Process the responses that were succcessful
-  const occurrences: { [key: string]: string[] } = {};
+  const occurrences: { [key: TrialID]: MatchingService[] } = {};
   const successfuResults = wrapperResults.filter(result => result.status == 200);
-  const distanceFilteredResults = {};
+  const distanceFilteredResults: { [key in MatchingService]?: StudyDetailProps[] } = {};
 
   successfuResults.forEach(({ response, serviceName }) => {
     const subset = [];
@@ -204,38 +211,40 @@ async function callWrappers(
   // If we're using site2 rubric, then bypass max results and just return all results
   if (siteRubric == 'site2' && mainCancerType == 'brain') {
     // Go through dictionary of occurences and grab the proper
-    results = Object.keys(occurrences).map(trial => {
-      const preferredService = occurrences[trial][0];
+    results = (Object.keys(occurrences) as TrialID[]).map(trialId => {
+      const preferredService = occurrences[trialId][0]; // Services are ordered by their appearance in .env
       const studyResult: StudyDetailProps = distanceFilteredResults[preferredService].find(
-        study => study.trialId == trial
+        study => study.trialId == trialId
       );
-      studyResult.source = occurrences[trial].join(', ');
+      studyResult.source = occurrences[trialId].join(', ');
       return studyResult;
     });
   } else {
-    const sortByOccurence = (a: string[], b: string[]) => {
+    const sortByOccurence = (a: [TrialID, MatchingService[]], b: [TrialID, MatchingService[]]) => {
       return b[1].length - a[1].length;
     };
 
     // Cut this off at the max results anyways
-    const trialCounts = Object.keys(occurrences)
-      .map(key => [key, occurrences[key]])
+    const trialCounts = (Object.keys(occurrences) as TrialID[])
+      .map<[TrialID, MatchingService[]]>(trialId => [trialId, occurrences[trialId]])
+      .filter(trialOccurrence => trialOccurrence[1].length > 1)
       .sort(sortByOccurence)
-      .filter(count => count[1].length > 1)
       .slice(0, resultsMax);
 
     // Go through the highest recurring trials first
-    results = trialCounts.map((trialId: [string, string[]]) => {
-      const services = trialId[1];
-      const preferredService = services[0];
-      const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialId[0]);
+    results = trialCounts.map(trialOccurrence => {
+      const services = trialOccurrence[1];
+      const preferredService = services[0]; // Services are ordered by their appearance in .env
+      const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialOccurrence[0]);
 
       // Change the sources to be all of the services that you saw this occurence for
       studyResult.source = services.join(', ');
 
       // Remove this trial as an option of trials from the distanceFilteredResults
       services.forEach(service => {
-        distanceFilteredResults[service] = distanceFilteredResults[service].filter(item => item.trialId != trialId[0]);
+        distanceFilteredResults[service] = distanceFilteredResults[service].filter(
+          item => item.trialId != trialOccurrence[0]
+        );
       });
 
       return studyResult;
@@ -243,7 +252,7 @@ async function callWrappers(
 
     // Then if we haven't hit the max, keep adding round robin style from those that are left.
     // Keep track of number of consecutive failures.
-    const validMatchingServices = Object.keys(distanceFilteredResults);
+    const validMatchingServices = Object.keys(distanceFilteredResults) as MatchingService[];
     let numOfFailures = 0;
     for (let i = results.length; i < resultsMax; i++) {
       // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
