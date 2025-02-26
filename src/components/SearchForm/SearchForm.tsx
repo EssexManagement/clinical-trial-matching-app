@@ -8,7 +8,7 @@ import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-mater
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ReactElement, useContext, useState } from 'react';
+import { ReactElement, useContext, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
 import ExportModal from '../Results/ExportModal';
@@ -32,6 +32,7 @@ import {
 import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType, State } from './types';
+import getConfig from 'next/config';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
@@ -121,6 +122,10 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   const userId = useContext(UserIdContext);
 
   const originalValues = defaultValuesToQuery(formDataToSearchQuery(defaultValues as SearchFormValuesType));
+  const env = useRef<string>(null);
+  if (env.current === null) {
+    env.current = getConfig().publicRuntimeConfig.env;
+  }
 
   const onSubmit = (data: SearchFormValuesType) => {
     if (disableLocation) {
@@ -230,6 +235,37 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
         )}
 
         <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
+          {env.current === 'development' && (
+            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', mt: 2 }}>
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  const formValues = getValues();
+                  localStorage.setItem('savedSearch', JSON.stringify(formValues));
+                }}
+              >
+                Save Search
+              </Button>
+
+              <Button
+                variant="outlined"
+                sx={{ ml: 2 }}
+                onClick={() => {
+                  const savedSearch = localStorage.getItem('savedSearch');
+                  if (savedSearch) {
+                    const parsedSearch = JSON.parse(savedSearch);
+                    // Assuming your form values can accept these values directly
+                    Object.keys(parsedSearch).forEach(key => {
+                      setValue(key as keyof SearchFormValuesType, parsedSearch[key]);
+                    });
+                  }
+                }}
+              >
+                Retrieve Saved
+              </Button>
+            </Box>
+          )}
+
           <Grid item xs={8}>
             <MatchingServices {...{ control, fullWidth }} />
           </Grid>

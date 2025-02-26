@@ -41,6 +41,7 @@ module.exports = {
   poweredByHeader: false,
   reactStrictMode: true,
   publicRuntimeConfig: {
+    env: process.env.NODE_ENV,
     fhirClientId: process.env.FHIR_CLIENT_ID,
     fhirRedirectUri: process.env.FHIR_REDIRECT_URI,
     fhirScope: process.env.FHIR_SCOPE,
