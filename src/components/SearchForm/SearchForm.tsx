@@ -241,6 +241,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
                 variant="outlined"
                 onClick={() => {
                   const formValues = getValues();
+                  delete formValues['matchingServices'];
                   localStorage.setItem('savedSearch', JSON.stringify(formValues));
                 }}
               >
