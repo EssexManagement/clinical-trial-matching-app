@@ -308,20 +308,28 @@ class CTMSWebApp {
    */
   async joinReleaseNotes(installer) {
     const append = this instanceof CTMSWrapper;
-    const args = [
-      'powershell',
-      [
-        '-File',
-        installer.joinPath('.\\clinical-trial-matching-app\\scripts\\join-release-notes.ps1'),
-        '-NotesPath',
-        installer.joinPath(this.path),
-      ],
-      {},
-    ];
-    if (append) {
-      args[1].push('-Append');
+    const appOrWrapperPath = installer.joinPath(this.path);
+    const existing = await exists(appOrWrapperPath, 'directory');
+    if (!existing) {
+      console.warn(`ENOENT ${appOrWrapperPath}`);
     }
-    await exec(...args);
+    const appOrWrapperBasename = path.basename(appOrWrapperPath);
+    if (append) {
+      await fs.appendFile(installer.joinPath('RELEASE-NOTES.md'), `# ${appOrWrapperBasename}`, {
+        encoding: 'utf8',
+      });
+    } else {
+      await fs.writeFile(installer.joinPath('RELEASE-NOTES.md'), `# ${appOrWrapperBasename}`, {
+        encoding: 'utf8',
+      });
+    }
+    const appOrWrapperReleaseNotes = await fs.readFile(path.join(appOrWrapperPath, 'LATEST-RELEASE.md'), {
+      encoding: 'utf8',
+    });
+    await fs.appendFile(
+      installer.joinPath('RELEASE-NOTES.md'),
+      `\n-------------------------------------------------------------------------\n${appOrWrapperReleaseNotes}`
+    );
   }
 
   async runCleanCommand(installer) {
