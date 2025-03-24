@@ -163,10 +163,15 @@ else
     fi
 fi
 
-echo "Installing NGINX..."
-if ! sudo apt-get install -y nginx ; then
-    echo "Unable to install NGINX." >&2
-    exit 1
+
+if nginx_version=`nginx -v 2>&1`; then
+    echo "NGINX is installed as $nginx_version"
+else
+    echo "Installing NGINX..."
+    if ! sudo apt-get install -y nginx ; then
+        echo "Unable to install NGINX." >&2
+        exit 1
+    fi
 fi
 echo "Installing Passenger for NGINX..."
 
@@ -247,7 +252,7 @@ if ! [ -f "$CTMS_DIR/clinical-trial-matching-app/scripts/install.js" ] ; then
   git clone 'https://github.com/EssexManagement/clinical-trial-matching-app.git'
   popd
 fi
-sudo -u "$CTMS_USER" node "$CTMS_DIR/clinical-trial-matching-app/install.js" --install-dir "$CTMS_DIR" --extra-ca-certs "$EXTRA_CA_CERTS_FILE" $*
+sudo -u "$CTMS_USER" node "$CTMS_DIR/clinical-trial-matching-app/scripts/install.js" --install-dir "$CTMS_DIR" --extra-ca-certs "$EXTRA_CA_CERTS_FILE" $*
 
 # The wrapper script doesn't have permissions to write the nginx configuration file, so this needs to be done with a second step
 echo "Copying nginx config..."

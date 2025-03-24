@@ -319,7 +319,7 @@ function invokeRestMethod(options, body) {
           options.hostname = location.hostname;
           options.port = location.port ? location.port : reqPort;
           options.path = location.pathname;
-          log('Redirecting to %s://%s:%d/%s', protocol, options.hostname, options.port, options.path);
+          log('Redirecting to %s://%s:%d%s', protocol, options.hostname, options.port, options.path);
           // And then send the redirect
           res.on('data', chunk => {
             log('Redirect data chunk (%d bytes)', chunk.length);
