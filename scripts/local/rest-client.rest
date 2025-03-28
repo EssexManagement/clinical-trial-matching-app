@@ -85,3 +85,15 @@ Authorization: Bearer {{cb_token}}
       }
     }
   }
+
+### GET CTS API
+POST https://clinicaltrialsapi.cancer.gov/api/v2/trials
+X-API-KEY: {{$processEnv CTS_V2_API_KEY}}
+
+  {
+    "nct_id": "NCT02674061",
+    "include": [
+      "outcome_measures"
+    ],
+    "size": 1
+  }
