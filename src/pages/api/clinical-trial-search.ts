@@ -41,7 +41,7 @@ const {
  * type hints.
  */
 type TrialID = `NCT${string}`;
-type MatchingService = 'breastCancerTrials' | 'carebox' | 'trialjectory';
+type MatchingService = 'BreastCancerTrials.org' | 'Carebox' | 'TrialJectory';
 
 /**
  * API/Query handler For clinical-trial-search
