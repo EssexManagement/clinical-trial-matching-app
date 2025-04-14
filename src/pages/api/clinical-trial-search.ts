@@ -1,5 +1,5 @@
 import { BundleEntry as BundleEntryWithStudy, StudyDetailProps } from '@/components/Results';
-import { getStudyDetailProps } from '@/components/Results/utils';
+import { getLikelihood, getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
 import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
@@ -220,6 +220,12 @@ async function callWrappers(
       return studyResult;
     });
   } else {
+    console.log('number of Carebox after distance filtering', distanceFilteredResults['Carebox']?.length);
+    console.log('Carebox', JSON.stringify(distanceFilteredResults['Carebox']?.map(study => study.trialId)));
+    console.log('number of TrialJectory after distance filtering', distanceFilteredResults['TrialJectory']?.length);
+    console.log('TrialJectory', JSON.stringify(distanceFilteredResults['TrialJectory']?.map(study => study.trialId)));
+    console.log('number of BCT.org after distance filtering', distanceFilteredResults['BreastCancerTrials.org']?.length);
+    console.log('BreastCancerTrials.org', JSON.stringify(distanceFilteredResults['BreastCancerTrials.org']?.map(study => study.trialId)));
     const sortByOccurence = (a: [TrialID, MatchingService[]], b: [TrialID, MatchingService[]]) => {
       return b[1].length - a[1].length;
     };
@@ -254,10 +260,12 @@ async function callWrappers(
     // Keep track of number of consecutive failures.
     const validMatchingServices = Object.keys(distanceFilteredResults) as MatchingService[];
     let numOfFailures = 0;
-    for (let i = results.length; i < resultsMax; i++) {
+    let count = results.length;
+    let cycles = count;
+    while (count < resultsMax) {
       // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
       if (numOfFailures == validMatchingServices.length) break;
-      const currentService = validMatchingServices[i % validMatchingServices.length];
+      const currentService = validMatchingServices[cycles % validMatchingServices.length];
       const study: StudyDetailProps = distanceFilteredResults[currentService].pop();
 
       if (study == undefined || study == null) {
@@ -265,7 +273,19 @@ async function callWrappers(
       } else {
         numOfFailures = 0;
         results.push(study);
+        count++;
       }
+      cycles++;
+    }
+  }
+
+  // if the study has more than 1 matching service,
+  // consider it a high likelihood
+  for (const result of results) {
+    if (result.source?.split(',')?.length > 1) {
+      result.likelihood = getLikelihood({
+        score: 1,
+      });
     }
   }
 

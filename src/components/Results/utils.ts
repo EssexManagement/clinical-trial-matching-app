@@ -61,7 +61,7 @@ const getEligibility = (study: ResearchStudy) => study.enrollment?.[0]?.display.
 
 const getKeywords = (study: ResearchStudy): string[] => study.keyword?.map(({ text }) => text.replace(/_/g, ' '));
 
-const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
+export const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
   const score = search?.score;
   if (score >= 0.75) return { text: 'High-likelihood match', color: 'common.green', score };
   else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow', score };
