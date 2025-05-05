@@ -783,7 +783,7 @@
     "system": "http://snomed.info/sct",
     "category": ["scc"]
   },
-    {
+  {
     "entryType": "cancerSubtype",
     "cancerType": ["bladder"],
     "code": "1231399003",
@@ -1182,5 +1182,21 @@
     "display": "Carcinoma with pleomorphic, sarcomatoid or sarcomatous elements (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Sarcomatoid Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "86251006",
+    "display": "Neoplasm of uncertain behavior (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Borderline Malignancy"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "3898006",
+    "display": "Neoplasm, benign (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Benign Neoplasm"]
   }
 ]
