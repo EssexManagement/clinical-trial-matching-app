@@ -4806,5 +4806,261 @@
     "display": "Primary malignant neoplasm of anterior wall of urinary bladder (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "700423003",
+    "display": "Adenocarcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "783771003",
+    "display": "Acinar cell carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1290080008",
+    "display": "Neuroendocrine neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "866048009",
+    "display": "Mucinous cystic neoplasm with invasive carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "783706007",
+    "display": "Serous cystadenocarcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "782697005",
+    "display": "Solid pseudopapillary carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "715414009",
+    "display": "Familial malignant neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "372142002",
+    "display": "Carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "372003004",
+    "display": "Primary malignant neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "363419009",
+    "display": "Malignant neoplasm of head of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "314964006",
+    "display": "Local recurrence of malignant neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "255088001",
+    "display": "Malignant neoplasm of exocrine pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "254611009",
+    "display": "Malignant neoplasm of endocrine pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "363418001",
+    "display": "Malignant neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "189814006",
+    "display": "Pancreatoblastoma (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "187798008",
+    "display": "Malignant neoplasm of ectopic pancreatic tissue (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "187793004",
+    "display": "Malignant neoplasm of pancreatic duct (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "187792009",
+    "display": "Malignant neoplasm of tail of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "187791002",
+    "display": "Malignant neoplasm of body of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "109848009",
+    "display": "Overlapping malignant neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "94459006",
+    "display": "Metastatic malignant neoplasm to pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1259539007",
+    "display": "Primary carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1186869002",
+    "display": "Neuroendocrine carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "363369002",
+    "display": "Carcinoma of tail of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "363368005",
+    "display": "Carcinoma of body of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "326072005",
+    "display": "Carcinoma of head of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "254612002",
+    "display": "Carcinoma of endocrine pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "254609000",
+    "display": "Carcinoma of ampulla of Vater (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "92672004",
+    "display": "Carcinoma in situ of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "93715005",
+    "display": "Primary malignant neoplasm of body of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "126858004",
+    "display": "Neoplasm of ampulla of Vater (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "126859007",
+    "display": "Neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
   }
 ]

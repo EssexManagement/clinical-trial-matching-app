@@ -70,5 +70,13 @@
     "display": "Secondary malignant neoplasm of brain",
     "system": "http://snomed.info/sct",
     "category": ["Brain"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas"],
+    "code": "94459006",
+    "display": "Secondary malignant neoplasm of pancreas",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
   }
 ]
