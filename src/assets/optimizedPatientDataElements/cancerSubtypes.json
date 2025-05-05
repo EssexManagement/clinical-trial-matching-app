@@ -225,7 +225,7 @@
   },
   {
     "entryType": "cancerSubtype",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "pancreas"],
     "code": "128691004",
     "display": "Intraductal papillary-mucinous carcinoma, non-invasive",
     "system": "http://snomed.info/sct",
@@ -309,7 +309,7 @@
     "code": "12478003",
     "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)",
     "system": "http://snomed.info/sct",
-    "category": ["Invasive", "Invasive Carcinoma"]
+    "category": ["Invasive", "Invasive Carcinoma", "Squamous Cell Carcinoma"]
   },
   {
     "entryType": "cancerSubtype",
@@ -369,7 +369,7 @@
   },
   {
     "entryType": "cancerSubtype",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "pancreas"],
     "code": "128692006",
     "display": "Intraductal papillary-mucinous carcinoma, invasive (morphologic abnormality)",
     "system": "http://snomed.info/sct",
@@ -461,7 +461,7 @@
     "code": "448406002",
     "display": "Grade III squamous intraepithelial neoplasia with microinvasive squamous cell carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
-    "category": ["Invasive", "Invasive Carcinoma"]
+    "category": ["Invasive", "Invasive Carcinoma", "Squamous Cell Carcinoma"]
   },
   {
     "entryType": "cancerSubtype",
@@ -797,7 +797,7 @@
     "code": "1208484008",
     "display": "Sarcomatoid urothelial carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
-    "category": ["Urothelial Carcinoma"]
+    "category": ["Urothelial Carcinoma", "Sarcomatoid Carcinoma"]
   },
   {
     "entryType": "cancerSubtype",
@@ -828,14 +828,6 @@
     "cancerType": ["bladder"],
     "code": "12400006",
     "display": "Papillary transitional cell carcinoma (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Urothelial Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
-    "code": "1208484008",
-    "display": "Sarcomatoid urothelial carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Urothelial Carcinoma"]
   },
@@ -908,14 +900,6 @@
     "cancerType": ["bladder"],
     "code": "449778005",
     "display": "Undifferentiated nonkeratinizing squamous cell carcinoma (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Squamous Cell Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
-    "code": "448406002",
-    "display": "Grade III squamous intraepithelial neoplasia with microinvasive squamous cell carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Squamous Cell Carcinoma"]
   },
@@ -1026,18 +1010,10 @@
   {
     "entryType": "cancerSubtype",
     "cancerType": ["bladder"],
-    "code": "12478003",
-    "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Squamous Cell Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
     "code": "10288008",
     "display": "Squamous cell carcinoma, spindle cell (morphologic abnormality)",
     "system": "http://snomed.info/sct",
-    "category": ["Squamous Cell Carcinoma"]
+    "category": ["Squamous Cell Carcinoma", "Sarcomatoid Carcinoma"]
   },
   {
     "entryType": "cancerSubtype",
@@ -1114,14 +1090,6 @@
   {
     "entryType": "cancerSubtype",
     "cancerType": ["bladder"],
-    "code": "399694008",
-    "display": "Squamous cell carcinoma, nonkeratinizing, mixed differentiated and undifferentiated (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Mixed"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
     "code": "23109009",
     "display": "Pseudosarcomatous carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
@@ -1138,24 +1106,8 @@
   {
     "entryType": "cancerSubtype",
     "cancerType": ["bladder"],
-    "code": "1208484008",
-    "display": "Sarcomatoid urothelial carcinoma (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Sarcomatoid Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
     "code": "18861007",
     "display": "Granulosa cell tumor, malignant (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Sarcomatoid Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["bladder"],
-    "code": "10288008",
-    "display": "Squamous cell carcinoma, spindle cell (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Sarcomatoid Carcinoma"]
   },
@@ -1198,5 +1150,53 @@
     "display": "Neoplasm, benign (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Benign Neoplasm"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "45410002",
+    "display": "Acinar cell carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Acinar Cell Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "450897002",
+    "display": "Mixed acinar-ductal carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mixed"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "396891002",
+    "display": "Mixed acinar-endocrine carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mixed"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "785766008",
+    "display": "Mixed neuroendocrine-non neuroendocrine neoplasm (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mixed"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "116061001",
+    "display": "Solid pseudopapillary carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pseudopapillary Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "1306888009",
+    "display": "Malignant solid pseudopapillary neoplasm (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pseudopapillary Carcinoma"]
   }
 ]
