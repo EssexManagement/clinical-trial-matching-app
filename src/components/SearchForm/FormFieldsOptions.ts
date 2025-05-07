@@ -25,8 +25,15 @@ const applyRestriction = (restricted: Partial<CodedValueType>[], original: Coded
 
 export const getJoinedCategories = (option: CodedValueType): string => option.category.join(' | ');
 
-const byAscendingJoinedCategory = (first: CodedValueType, second: CodedValueType): number =>
-  getJoinedCategories(first).localeCompare(getJoinedCategories(second));
+const compareByCategoriesThenDisplay = (first: CodedValueType, second: CodedValueType): number => {
+  const categoryCompare = getJoinedCategories(first).localeCompare(getJoinedCategories(second));
+  if (categoryCompare !== 0) {
+    // sort by category first
+    return categoryCompare;
+  }
+  // sort by display within the same category
+  return first.display.localeCompare(second.display);
+};
 
 const byAscendingScore = (first: Score, second: Score): number => first.valueInteger - second.valueInteger;
 
@@ -95,7 +102,7 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
     if (Array.isArray(newState[field]) && newState[field].length !== 0) {
       const firstEntry = newState[field][0];
       if ('category' in firstEntry) {
-        newState[field] = [...newState[field]].sort(byAscendingJoinedCategory);
+        newState[field] = [...newState[field]].sort(compareByCategoriesThenDisplay);
       }
       if ('valueInteger' in firstEntry) {
         newState[field] = [...newState[field]].sort(byAscendingScore);

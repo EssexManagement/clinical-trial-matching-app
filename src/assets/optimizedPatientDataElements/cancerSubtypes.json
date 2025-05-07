@@ -505,7 +505,7 @@
   },
   {
     "entryType": "cancerSubtype",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "pancreas"],
     "code": "734074006",
     "display": "Mucinous cystic neoplasm with invasive carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
@@ -1186,17 +1186,9 @@
   {
     "entryType": "cancerSubtype",
     "cancerType": ["pancreas"],
-    "code": "116061001",
-    "display": "Solid pseudopapillary carcinoma (morphologic abnormality)",
+    "code": "128628002",
+    "display": "Large cell neuroendocrine carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
-    "category": ["Pseudopapillary Carcinoma"]
-  },
-  {
-    "entryType": "cancerSubtype",
-    "cancerType": ["pancreas"],
-    "code": "1306888009",
-    "display": "Malignant solid pseudopapillary neoplasm (morphologic abnormality)",
-    "system": "http://snomed.info/sct",
-    "category": ["Pseudopapillary Carcinoma"]
+    "category": ["Large Cell Neuroendocrine"]
   }
 ]
