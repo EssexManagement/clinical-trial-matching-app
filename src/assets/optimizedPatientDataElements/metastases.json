@@ -78,5 +78,13 @@
     "display": "Secondary malignant neoplasm of pancreas",
     "system": "http://snomed.info/sct",
     "category": ["Pancreas"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["breast", "colon", "uterus"],
+    "code": "94665001",
+    "display": "Secondary malignant neoplasm of uterus",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
   }
 ]

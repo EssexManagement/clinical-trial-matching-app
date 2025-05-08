@@ -5078,5 +5078,53 @@
     "display": "Mucinous cystic neoplasm with low-grade intraepithelial neoplasia of pancreas (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "371973000",
+    "display": "Malignant neoplasm of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "702369008",
+    "display": "Carcinosarcoma of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "446022000",
+    "display": "Malignant epithelial neoplasm of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "371972005",
+    "display": "Malignant neoplasm of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "254877001",
+    "display": "Sarcoma of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "92788005",
+    "display": "Carcinoma in situ of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
   }
 ]
