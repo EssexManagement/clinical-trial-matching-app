@@ -35,6 +35,7 @@ export enum CancerType {
   COLON = 'colon',
   PROSTATE = 'prostate',
   MULTIPLE_MYELOMA = 'multipleMyeloma',
+  UTERUS = 'uterus',
 }
 
 export type Field = keyof Pick<
