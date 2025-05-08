@@ -70,5 +70,13 @@
     "display": "Secondary malignant neoplasm of brain",
     "system": "http://snomed.info/sct",
     "category": ["Brain"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["breast", "colon", "uterus"],
+    "code": "94665001",
+    "display": "Secondary malignant neoplasm of uterus",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
   }
 ]

@@ -5,19 +5,24 @@ import json
 import pandas as pd
 
 # %% Copy/paste the table of Concept, Preferred Term, and ID from SNOMED CT Browser ECL builder results
-# filename = "/workspaces/acs-ctms-vol/clinical-trial-matching-app/src/assets/optimizedPatientDataElements/cancerTypes.json"
-# cancerType = [["pancreas"]]
-# entryType = "cancerType"
+filename = "/workspaces/acs-ctms-vol/clinical-trial-matching-app/src/assets/optimizedPatientDataElements/cancerTypes.json"
+cancerType = [["uterus"]]
+entryType = "cancerType"
 # --------------
-filename = "/workspaces/acs-ctms-vol/clinical-trial-matching-app/src/assets/optimizedPatientDataElements/cancerSubtypes.json"
-cancerType = [["pancreas"]]
-entryType = "cancerSubtype"
+# filename = "/workspaces/acs-ctms-vol/clinical-trial-matching-app/src/assets/optimizedPatientDataElements/cancerSubtypes.json"
+# cancerType = [["pancreas"]]
+# entryType = "cancerSubtype"
 # --------------
 new_data = """
-Large cell neuroendocrine carcinoma (morphologic abnormality)\t_\t128628002
+Malignant neoplasm of uterus (disorder)\t_\t371973000
+Carcinosarcoma of uterus (disorder)	Carcinosarcoma of uterus	702369008
+Malignant epithelial neoplasm of uterus (disorder)	Carcinoma of uterus	446022000
+Malignant neoplasm of body of uterus (disorder)	Malignant neoplasm of body of uterus	371972005
+Sarcoma of uterus (disorder)	Sarcoma of uterus	254877001
+Carcinoma in situ of uterus (disorder)\t_\t92788005
 """
-# category = [["Pancreas"]]
-category = [["Large Cell Neuroendocrine"]]
+category = [["Uterus"]]
+# category = [["Large Cell Neuroendocrine"]]
 
 
 def do_standardization(
