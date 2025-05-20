@@ -5002,14 +5002,6 @@
   {
     "entryType": "cancerType",
     "cancerType": ["pancreas"],
-    "code": "254609000",
-    "display": "Carcinoma of ampulla of Vater (disorder)",
-    "system": "http://snomed.info/sct",
-    "category": ["Pancreas"]
-  },
-  {
-    "entryType": "cancerType",
-    "cancerType": ["pancreas"],
     "code": "92672004",
     "display": "Carcinoma in situ of pancreas (disorder)",
     "system": "http://snomed.info/sct",
@@ -5026,14 +5018,6 @@
   {
     "entryType": "cancerType",
     "cancerType": ["pancreas"],
-    "code": "126858004",
-    "display": "Neoplasm of ampulla of Vater (disorder)",
-    "system": "http://snomed.info/sct",
-    "category": ["Pancreas"]
-  },
-  {
-    "entryType": "cancerType",
-    "cancerType": ["pancreas"],
     "code": "126859007",
     "display": "Neoplasm of pancreas (disorder)",
     "system": "http://snomed.info/sct",
@@ -5044,14 +5028,6 @@
     "cancerType": ["pancreas"],
     "code": "1237341006",
     "display": "Intraductal tubulopapillary malignant neoplasm of pancreas (disorder)",
-    "system": "http://snomed.info/sct",
-    "category": ["Pancreas"]
-  },
-  {
-    "entryType": "cancerType",
-    "cancerType": ["pancreas"],
-    "code": "276852004",
-    "display": "Papillary tumor of ampulla of Vater (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Pancreas"]
   },
