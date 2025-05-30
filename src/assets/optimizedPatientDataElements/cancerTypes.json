@@ -5003,7 +5003,7 @@
     "entryType": "cancerType",
     "cancerType": ["pancreas"],
     "code": "254609000",
-    "display": "Carcinoma of ampulla of Vater (disorder)",
+    "display": "Ampullary carcinoma",
     "system": "http://snomed.info/sct",
     "category": ["Pancreas"]
   },
