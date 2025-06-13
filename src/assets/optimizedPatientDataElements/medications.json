@@ -8104,91 +8104,91 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "32592",
     "display": "Oxaliplatin",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "358819",
     "display": "Oxaliplatin 5 MG/ML",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1160121",
     "display": "Oxaliplatin Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736775",
     "display": "Oxaliplatin Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736776",
     "display": "10 ML oxaliplatin 5 MG/ML Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736781",
     "display": "20 ML oxaliplatin 5 MG/ML Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736783",
     "display": "Oxaliplatin 50 MG",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736784",
     "display": "Oxaliplatin 50 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736785",
     "display": "Oxaliplatin 100 MG",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1736786",
     "display": "Oxaliplatin 100 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "1797528",
     "display": "40 ML oxaliplatin 5 MG/ML Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Eloxatin"]
+    "category": ["Oxaliplatin", "Eloxatin"]
   },
   {
     "entryType": "medications",
@@ -26752,35 +26752,35 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "486610",
     "display": "PACLitaxel protein-bound",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "583214",
     "display": "PACLitaxel 100 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "583218",
     "display": "Abraxane 100 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "589511",
     "display": "Abraxane",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
@@ -26792,11 +26792,11 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "1165953",
     "display": "Abraxane Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
@@ -26816,19 +26816,19 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "1663183",
     "display": "PACLitaxel 100 MG [Abraxane]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung", "prostate"],
+    "cancerType": ["breast", "lung", "prostate", "pancreas"],
     "code": "1663184",
     "display": "PACLitaxel Injection [Abraxane]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-    "category": ["Paclitaxel"]
+    "category": ["Nab-Paclitaxel", "Abraxane"]
   },
   {
     "entryType": "medications",

@@ -1881,6 +1881,30 @@
   },
   {
     "entryType": "surgery",
+    "cancerType": ["pancreas"],
+    "code": "33149006",
+    "display": "Pancreatectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["pancreas"],
+    "code": "116241004",
+    "display": "Pancreaticoduodenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreaticoduodenectomy", "Whipple Procedure"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["pancreas"],
+    "code": "401004",
+    "display": "Distal subtotal pancreatectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Distal Pancreatectomy"]
+  },
+  {
+    "entryType": "surgery",
     "cancerType": ["breast"],
     "code": "405768001",
     "display": "Autotransplantation of heart (procedure)",

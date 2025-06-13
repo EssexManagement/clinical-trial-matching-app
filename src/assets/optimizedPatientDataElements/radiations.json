@@ -478,5 +478,13 @@
     "display": "Radiofrequency ablation using ultrasound guidance (procedure)",
     "system": "http://snomed.info/sct",
     "category": ["RFA"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "395096001",
+    "display": "Stereotactic radiotherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["SRT"]
   }
 ]
