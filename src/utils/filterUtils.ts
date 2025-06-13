@@ -156,3 +156,17 @@ export const getFilterOptions = (results: StudyDetailProps[], parameters: Filter
 
   return filterOptions;
 };
+
+export const getKeywordOptions = (results: StudyDetailProps[]): string[] => {
+  const result = Array.from(
+    results.reduce((set, cur) => {
+      const conditions = new Set(cur.conditions);
+      for (const cond of conditions.values()) {
+        set.add(cond);
+      }
+      return set;
+    }, new Set<string>())
+  );
+  result.sort();
+  return result;
+};

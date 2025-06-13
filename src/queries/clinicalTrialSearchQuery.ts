@@ -20,6 +20,8 @@ export type ResultsResponse = {
   errors?: ErrorResponse[];
   filterOptions?: FilterOptions;
   total?: number;
+  numServices: number;
+  keywordOptions?: string[];
 };
 
 export type ErrorResponse = {

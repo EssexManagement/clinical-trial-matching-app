@@ -20,6 +20,8 @@ type SidebarProps = {
   filterOptions: FilterOptions;
   setUserId: (string) => void;
   query: ParsedUrlQuery;
+  showKeyword: boolean;
+  keywordOptions: string[];
 };
 
 enum SidebarExpand {
@@ -33,7 +35,16 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUserId }: SidebarProps): ReactElement => {
+const Sidebar = ({
+  patient,
+  disabled,
+  savedStudies,
+  filterOptions,
+  query,
+  setUserId,
+  showKeyword,
+  keywordOptions,
+}: SidebarProps): ReactElement => {
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
 
   const handleChange = (panel: SidebarExpand) => (_event: SyntheticEvent, isExpanded: boolean) => {
@@ -64,6 +75,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
   const recruitmentStatus = ensureArray(query.recruitmentStatus);
   const trialPhase = ensureArray(query.trialPhase);
   const studyType = ensureArray(query.studyType);
+  const keywordSearch = ensureArray(query.keywordSearch);
 
   const defaultFilterValues: FilterFormValuesType = {
     sortingOption,
@@ -101,6 +113,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
     savedStudies: Array.from(savedStudies),
     page: DEFAULT_PAGE,
     pageSize: query.pageSize as string,
+    keywordSearch,
   };
 
   return (
@@ -131,6 +144,8 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
           fullSearchParams={fullSearchParams}
           filterOptions={filterOptions}
           disabled={disabled}
+          showKeyword={showKeyword}
+          keywordOptions={keywordOptions}
         />
       </SidebarAccordion>
     </>

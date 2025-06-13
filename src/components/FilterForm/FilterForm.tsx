@@ -1,13 +1,25 @@
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { Search as SearchIcon } from '@mui/icons-material';
-import { Box, Button, FormControl, Grid, useMediaQuery, useTheme } from '@mui/material';
+import {
+  Autocomplete,
+  Box,
+  Button,
+  createFilterOptions,
+  FormControl,
+  Grid,
+  TextField,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { useRouter } from 'next/router';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
 import FilterAccordion from './FilterAccordion';
 import { SortingRadioGroup } from './FormFields';
 import { FilterFormValuesType } from './types';
+import { ensureArray } from '../Sidebar/Sidebar';
 
 export type FilterFormProps = {
   defaultValues: Partial<FilterFormValuesType>;
@@ -16,6 +28,8 @@ export type FilterFormProps = {
   fullSearchParams?: FullSearchParameters;
   filterOptions: FilterOptions;
   disabled?: boolean;
+  showKeyword: boolean;
+  keywordOptions: string[];
 };
 
 export const formDataToFilterQuery = ({
@@ -46,19 +60,35 @@ const FilterForm = ({
   fullSearchParams,
   filterOptions,
   disabled,
+  showKeyword,
+  keywordOptions,
 }: FilterFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control, reset } = useForm<FilterFormValuesType>({ defaultValues });
-
+  const [keywordSearch, setKeyword] = useState(ensureArray(fullSearchParams.keywordSearch));
   const originalValues = defaultValuesToQuery(defaultValues);
+  const keywordConfig = createFilterOptions<string>({
+    limit: 10,
+  });
 
-  const onSubmit = (data: FilterFormValuesType) =>
+  const onSubmit = (data: FilterFormValuesType) => {
+    const query = {
+      ...fullSearchParams,
+      ...formDataToFilterQuery(data as FilterFormValuesType),
+      ...originalValues,
+    };
+    if (showKeyword) {
+      query['keywordSearch'] = keywordSearch;
+    } else {
+      delete query['keywordSearch'];
+    }
     router.push({
       pathname: '/results',
-      query: { ...fullSearchParams, ...formDataToFilterQuery(data as FilterFormValuesType), ...originalValues },
+      query,
     });
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -70,7 +100,14 @@ const FilterForm = ({
             sx={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'flex-start' }}
             display="flex"
           >
-            <Button onClick={() => reset(blankValues)} disabled={disabled} variant="text">
+            <Button
+              onClick={() => {
+                reset(blankValues);
+                setKeyword([]);
+              }}
+              disabled={disabled}
+              variant="text"
+            >
               Clear all
             </Button>
 
@@ -98,6 +135,31 @@ const FilterForm = ({
                 </FormControl>
               </FilterAccordion>
             </Grid>
+          )}
+
+          {showKeyword && (
+            <>
+              <Grid item xs={8}>
+                <Typography fontWeight="600" textTransform="uppercase">
+                  Keyword Search
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+                <Autocomplete
+                  multiple
+                  freeSolo
+                  options={ensureArray(keywordOptions)}
+                  filterOptions={keywordConfig}
+                  value={keywordSearch}
+                  onChange={(_, newValue) => setKeyword(newValue)}
+                  sx={{
+                    '& .MuiInputBase-input.MuiOutlinedInput-input': { py: 0.5 },
+                    '& .MuiInputBase-adornedStart': { py: 0.5 },
+                  }}
+                  renderInput={params => <TextField {...params} fullWidth aria-label="Keyword Search" />}
+                />
+              </Grid>
+            </>
           )}
 
           <Grid item xs={8}>

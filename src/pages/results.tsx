@@ -148,13 +148,17 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   const [open, setOpen] = useState(true);
 
   const { data: searchData } = useQuery(
-    ['clinical-trials', getSearchParams(searchParams), patient],
+    ['clinical-trials', getSearchParams(searchParams), searchParams.zipcode, patient],
     () => clinicalTrialSearchQuery(patient, user, searchParams),
     {
       enabled: typeof window !== 'undefined',
       refetchOnMount: false,
     }
   );
+
+  const showKeyword = useMemo(() => {
+    return searchData?.numServices === 1;
+  }, [searchData?.numServices]);
 
   const { data: distanceFilteredData } = useQuery(
     ['clinical-trials', searchData, getDistanceParams(searchParams)],
@@ -166,8 +170,8 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   );
 
   const { data: filteredData } = useQuery(
-    ['clinical-trials', distanceFilteredData, getFilterParams(searchParams)],
-    () => clinicalTrialFilterQuery(distanceFilteredData, searchParams),
+    ['clinical-trials', distanceFilteredData, getFilterParams(searchParams), searchParams.keywordSearch],
+    () => clinicalTrialFilterQuery(distanceFilteredData, searchParams, showKeyword),
     {
       enabled: !!distanceFilteredData && typeof window !== 'undefined',
       refetchOnMount: false,
@@ -194,10 +198,12 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
   const filterOptions = useMemo(() => data?.filterOptions, [data]);
+  const keywordOptions = useMemo(() => data?.keywordOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState
   );
+  console.log(JSON.stringify(data?.results?.map(r => r.trialId).slice(-15)));
 
   const hasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
@@ -254,6 +260,8 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
                 filterOptions={filterOptions}
                 setUserId={setUserId}
                 query={searchParams}
+                showKeyword={showKeyword}
+                keywordOptions={keywordOptions}
               />
             </UserIdContext.Provider>
           </Drawer>
@@ -275,6 +283,8 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
               filterOptions={filterOptions}
               setUserId={setUserId}
               query={searchParams}
+              showKeyword={showKeyword}
+              keywordOptions={keywordOptions}
             />
           </Drawer>
 

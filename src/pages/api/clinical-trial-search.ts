@@ -206,6 +206,7 @@ async function callWrappers(
 
     distanceFilteredResults[serviceName] = subset;
   });
+  const numServices = Object.keys(distanceFilteredResults).length;
 
   let results: StudyDetailProps[] = [];
   // If we're using site2 rubric, then bypass max results and just return all results
@@ -254,7 +255,9 @@ async function callWrappers(
     // Keep track of number of consecutive failures.
     const validMatchingServices = Object.keys(distanceFilteredResults) as MatchingService[];
     let numOfFailures = 0;
-    for (let i = results.length; i < resultsMax; i++) {
+    const oneAndOnlyMatchingService = Object.keys(distanceFilteredResults)[0];
+    const resultsMaxV2 = numServices === 1 ? distanceFilteredResults[oneAndOnlyMatchingService].length : resultsMax;
+    for (let i = results.length; i < resultsMaxV2; i++) {
       // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
       if (numOfFailures == validMatchingServices.length) break;
       const currentService = validMatchingServices[i % validMatchingServices.length];
@@ -269,7 +272,7 @@ async function callWrappers(
     }
   }
 
-  return { results, errors };
+  return { results, errors, numServices };
 }
 
 type WrapperResponse = {

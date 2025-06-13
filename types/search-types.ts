@@ -2,7 +2,7 @@ export type FullSearchParameters = SearchParameters &
   SortingParameters &
   FilterParameters &
   PaginationParameters &
-  OriginalSearchParameters;
+  OriginalSearchParameters & { keywordSearch?: string[] };
 
 export type SearchParameters = {
   matchingServices: string | string[];
