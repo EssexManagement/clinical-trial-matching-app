@@ -2654,5 +2654,109 @@
     "display": "For ileal conduit",
     "system": "http://www.ama-assn.org/go/cpt",
     "category": ["Pelvic"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "236886002",
+    "display": "Hysterectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Hysterectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "29827000",
+    "display": "Excision of bilateral fallopian tubes and ovaries (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bilateral Salpingo-Oophorectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "443497002",
+    "display": "Excision of sentinel lymph node (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lymphadenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "78384007",
+    "display": "Omentectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Omentectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "14059008",
+    "display": "Pelvic lymphadenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lymphadenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "58347006",
+    "display": "Excision of lymph node (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lymphadenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "1303774005",
+    "display": "Extensive debulking of neoplasm of female reproductive organs (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Debulking"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "45681003",
+    "display": "Staging operation involving incision, exploration and biopsy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Staging Operation"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "107938000",
+    "display": "Small intestine excision (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bowel Resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "107944001",
+    "display": "Large intestine excision (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bowel Resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "173977007",
+    "display": "Creation of ileostomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ileostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "442190001",
+    "display": "Construction of external stoma of urinary system (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Urostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
+    "code": "107963000",
+    "display": "Excision of liver (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Hepatectomy"]
   }
 ]

@@ -118,5 +118,13 @@
     "display": "Secondary malignant neoplasm of peritoneum",
     "system": "http://snomed.info/sct",
     "category": ["Peritoneum"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "pancreas", "prostate", "uterus"],
+    "code": "94346004",
+    "display": "Secondary malignant neoplasm of intestinal tract",
+    "system": "http://snomed.info/sct",
+    "category": ["Intestine"]
   }
 ]

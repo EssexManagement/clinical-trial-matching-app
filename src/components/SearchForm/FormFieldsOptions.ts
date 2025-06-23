@@ -77,7 +77,21 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
   had prior treatments for a different condition. */
   const unrestricted = {
     biomarkers: biomarkers
-      .map(biomarker => biomarkerQualifiers.map((qualifier: Coding) => ({ ...biomarker, qualifier })))
+      .filter(b => !(b.category[0] === 'TMB' && b.category.length === 1))
+      .map(b =>
+        biomarkerQualifiers
+          .filter(q => !(q.display.startsWith('High') || q.display.startsWith('Low')))
+          .map(q => ({ ...b, qualifier: q }))
+      )
+      .concat(
+        biomarkers
+          .filter(b => b.category[0] === 'TMB' && b.category.length === 1)
+          .map(b =>
+            biomarkerQualifiers
+              .filter(q => q.display.startsWith('High') || q.display.startsWith('Low'))
+              .map(q => ({ ...b, qualifier: q }))
+          )
+      )
       .flat() as Biomarker[],
     cancerSubtype: getCancerSpecificCodes(selectedCancerType, cancerSubtypes as CodedValueType[]),
     cancerType: (cancerTypes as CodedValueType[]).map(createRestrictedAndUnrestrictedValues).flat(),

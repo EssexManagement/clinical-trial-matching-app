@@ -251,7 +251,9 @@ export const BiomarkersAutocomplete = ({
         const { display, qualifier } = { ...option };
         const positive = qualifier?.code === '10828004' && '+';
         const negative = qualifier?.code === '260385009' && '-';
-        const sign = positive || negative;
+        const high = qualifier?.code === '75540009' && 'High';
+        const low = qualifier?.code === '62482003' && 'Low';
+        const sign = positive || negative || high || low;
         return `${display}${sign && ' ' + sign}`;
       }}
     />

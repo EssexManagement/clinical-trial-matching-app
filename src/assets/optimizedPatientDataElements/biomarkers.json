@@ -1502,5 +1502,13 @@
     "display": "TERT gene promotor region targeted mutation analysis in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
     "category": ["TERT"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "94077-5",
+    "display": "Tumor mutation burden [Interpretation]",
+    "system": "http://loinc.org",
+    "category": ["TMB"]
   }
 ]

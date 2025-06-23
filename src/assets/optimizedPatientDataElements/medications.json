@@ -26632,7 +26632,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539967",
     "display": "Dostarlimab",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26640,7 +26640,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539968",
     "display": "Dostarlimab-gxly",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26648,7 +26648,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539969",
     "display": "Dostarlimab-gxly 50 MG/ML",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26656,7 +26656,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539970",
     "display": "Dostarlimab Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26664,7 +26664,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539971",
     "display": "Dostarlimab Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26672,7 +26672,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539972",
     "display": "10 ML dostarlimab-gxly 50 MG/ML Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26680,7 +26680,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539973",
     "display": "Jemperli",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26688,7 +26688,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539974",
     "display": "Dostarlimab-gxly 50 MG/ML [Jemperli]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26696,7 +26696,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539975",
     "display": "Dostarlimab Injection [Jemperli]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26704,7 +26704,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539976",
     "display": "Jemperli Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -26712,7 +26712,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["brain", "lung", "prostate"],
+    "cancerType": ["brain", "lung", "prostate", "uterus"],
     "code": "2539977",
     "display": "10 ML Jemperli 50 MG/ML Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34480,7 +34480,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267574",
     "display": "Fam-trastuzumab deruxtecan-nxki",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34488,7 +34488,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267575",
     "display": "Fam-trastuzumab deruxtecan-nxki 100 MG",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34496,7 +34496,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267576",
     "display": "Fam-trastuzumab deruxtecan-nxki 100 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34504,7 +34504,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267577",
     "display": "Enhertu",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34512,7 +34512,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267578",
     "display": "Fam-trastuzumab deruxtecan-nxki 100 MG [Enhertu]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34520,7 +34520,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267579",
     "display": "Trastuzumab Injection [Enhertu]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34528,7 +34528,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267580",
     "display": "Enhertu Injectable Product",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -34536,7 +34536,7 @@
   },
   {
     "entryType": "medications",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "2267581",
     "display": "Enhertu 100 MG Injection",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
