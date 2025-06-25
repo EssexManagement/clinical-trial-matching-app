@@ -2,8 +2,8 @@ name: Main Workflow
 
 on: [push, pull_request]
 
-# permissions:
-#   pull-requests: read
+permissions:
+  contents: read
 
 jobs:
   lint:
