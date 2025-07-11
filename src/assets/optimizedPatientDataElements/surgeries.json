@@ -2698,6 +2698,14 @@
   {
     "entryType": "surgery",
     "cancerType": ["uterus"],
+    "code": "89542003",
+    "display": "Excision of periaortic lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lymphadenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["uterus"],
     "code": "58347006",
     "display": "Excision of lymph node (procedure)",
     "system": "http://snomed.info/sct",

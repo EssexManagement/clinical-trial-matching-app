@@ -35893,5 +35893,261 @@
     "display": "Zoledronic acid Injection [Reclast]",
     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
     "category": ["Zoledronic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "6313",
+    "display": "Leucovorin",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "105691",
+    "display": "Leucovorin 7.5 Mg/Ml Injectable Solution",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "197860",
+    "display": "Leucovorin 10 Mg Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "197861",
+    "display": "Leucovorin 15 Mg Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "197862",
+    "display": "Leucovorin 25 Mg Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "197863",
+    "display": "Leucovorin 5 Mg Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "225852",
+    "display": "Leucovorin Calcium",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "237788",
+    "display": "Leucovorin 350 Mg Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "311282",
+    "display": "Leucovorin 10 Mg/Ml Injectable Solution",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "323957",
+    "display": "Leucovorin 10 Mg/Ml",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "329896",
+    "display": "Leucovorin 10 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "329897",
+    "display": "Leucovorin 15 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "329898",
+    "display": "Leucovorin 25 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "329899",
+    "display": "Leucovorin 5 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "360568",
+    "display": "Leucovorin 7.5 Mg/Ml",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "372573",
+    "display": "Leucovorin Injectable Solution",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "372575",
+    "display": "Leucovorin Oral Tablet",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1162848",
+    "display": "Leucovorin Injectable Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1162850",
+    "display": "Leucovorin Oral Product",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1163441",
+    "display": "Leucovorin Pill",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803920",
+    "display": "Leucovorin 350 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803921",
+    "display": "Leucovorin Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803929",
+    "display": "Leucovorin 50 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803930",
+    "display": "Leucovorin 50 Mg Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803931",
+    "display": "Leucovorin 100 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803932",
+    "display": "Leucovorin 100 Mg Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803936",
+    "display": "Leucovorin 200 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "1803937",
+    "display": "Leucovorin 200 Mg Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "2055035",
+    "display": "Leucovorin 500 Mg",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "2055036",
+    "display": "Leucovorin 500 Mg Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "2099993",
+    "display": "10 Ml Leucovorin 10 Mg/Ml Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
+  },
+  {
+    "entryType": "medications",
+    "cancerType": ["pancreas"],
+    "code": "2104714",
+    "display": "50 Ml Leucovorin 10 Mg/Ml Injection",
+    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+    "category": ["Leucovorin", "Calcium Folinate", "Folinic Acid"]
   }
 ]

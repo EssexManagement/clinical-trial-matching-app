@@ -5081,6 +5081,78 @@
   },
   {
     "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "780821007",
+    "display": "Invasive intraductal papillary-mucinous carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1148551007",
+    "display": "Infiltrating duct carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "792907004",
+    "display": "Adenocarcinoma of pancreatic duct (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "866052009",
+    "display": "Mixed ductal-neuroendocrine carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1197286008",
+    "display": "Primary mixed acinar ductal carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1197283000",
+    "display": "Primary mixed acinar endocrine-ductal carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1186735007",
+    "display": "Mixed neuroendocrine-non neuroendocrine neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "770602005",
+    "display": "Squamous cell carcinoma of exocrine pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1279841001",
+    "display": "Undifferentiated carcinoma with osteoclast-like giant cells of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
     "cancerType": ["uterus"],
     "code": "371973000",
     "display": "Malignant neoplasm of uterus (disorder)",

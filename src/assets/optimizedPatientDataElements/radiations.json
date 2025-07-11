@@ -486,5 +486,13 @@
     "display": "Stereotactic radiotherapy (procedure)",
     "system": "http://snomed.info/sct",
     "category": ["SRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "870385001",
+    "display": "Hypofractionated radiation therapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
   }
 ]
