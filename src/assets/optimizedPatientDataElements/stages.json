@@ -52,7 +52,7 @@
     "category": ["1"],
     "display": "Stage 1A (qualifier value)",
     "system": "http://snomed.info/sct",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "pancreas", "uterus"],
     "entryType": "stage"
   },
   {
@@ -60,7 +60,7 @@
     "category": ["1"],
     "display": "Stage 1B (qualifier value)",
     "system": "http://snomed.info/sct",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "pancreas", "uterus"],
     "entryType": "stage"
   },
   {
@@ -68,7 +68,7 @@
     "category": ["1"],
     "display": "Stage 1C (qualifier value)",
     "system": "http://snomed.info/sct",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "uterus"],
     "entryType": "stage"
   },
   {
@@ -132,7 +132,7 @@
     "category": ["2"],
     "display": "Stage 2C",
     "system": "http://snomed.info/sct",
-    "cancerType": ["breast"],
+    "cancerType": ["breast", "uterus"],
     "entryType": "stage"
   },
   {

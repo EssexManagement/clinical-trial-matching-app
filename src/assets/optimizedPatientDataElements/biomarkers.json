@@ -1153,7 +1153,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "lung", "breast"],
+    "cancerType": ["colon", "lung", "breast", "pancreas", "uterus"],
     "code": "14229-9",
     "display": "P53 protein Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1161,7 +1161,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "lung", "breast"],
+    "cancerType": ["colon", "lung", "breast", "pancreas", "uterus"],
     "code": "31149-8",
     "display": "P53 protein Ag/100 cells in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1185,7 +1185,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "lung", "breast"],
+    "cancerType": ["colon", "lung", "breast", "pancreas", "uterus"],
     "code": "94217-7",
     "display": "TP53 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1193,7 +1193,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "lung", "breast"],
+    "cancerType": ["colon", "lung", "breast", "pancreas", "uterus"],
     "code": "21739-8",
     "display": "TP53 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1225,7 +1225,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "lung", "breast"],
+    "cancerType": ["colon", "lung", "breast", "pancreas", "uterus"],
     "code": "89006-1",
     "display": "p53 Ab [Units/volume] in Serum or Plasma by Immunoassay",
     "system": "http://loinc.org",

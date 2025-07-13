@@ -1233,7 +1233,7 @@
   },
   {
     "entryType": "cancerSubtype",
-    "cancerType": ["uterus"],
+    "cancerType": ["uterus", "pancreas"],
     "code": "38549000",
     "display": "Carcinoma, undifferentiated (morphologic abnormality)",
     "system": "http://snomed.info/sct",
@@ -1265,7 +1265,7 @@
   },
   {
     "entryType": "cancerSubtype",
-    "cancerType": ["uterus"],
+    "cancerType": ["uterus", "pancreas"],
     "code": "1187396000",
     "display": "Sarcoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
@@ -1310,5 +1310,29 @@
     "display": "Signet ring cell carcinoma (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Signet Ring Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "403902008",
+    "display": "Adenosquamous carcinoma (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Adenosquamous Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "42596004",
+    "display": "Giant cell carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Giant Cell Carcinoma"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "74364000",
+    "display": "Small cell carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Small Cell Carcinoma"]
   }
 ]
