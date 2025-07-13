@@ -2766,5 +2766,29 @@
     "display": "Excision of liver (procedure)",
     "system": "http://snomed.info/sct",
     "category": ["Hepatectomy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["uterus"],
+    "code": "265060005",
+    "display": "Endometrial ablation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "122463005",
+    "display": "Embolization procedure (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Embolization"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "39250009",
+    "display": "Enucleation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Enucleation"]
   }
 ]

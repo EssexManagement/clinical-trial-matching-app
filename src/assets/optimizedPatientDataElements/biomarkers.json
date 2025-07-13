@@ -1,7 +1,7 @@
 [
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21625-9",
     "display": "ATM gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -9,7 +9,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21624-2",
     "display": "ATM gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -25,7 +25,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "93690-6",
     "display": "BRAF gene V600 mutations [Identifier] in Plasma cell-free DNA by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -33,7 +33,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "97025-1",
     "display": "BRAF gene V600 mutations [Identifier] in Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -41,7 +41,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "58415-1",
     "display": "BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -49,7 +49,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "85101-4",
     "display": "BRAF gene p.Val600Glu [Presence] in Bone marrow by Molecular genetics method",
     "system": "http://loinc.org",
@@ -57,7 +57,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "89861-9",
     "display": "BRAF gene p.Val600Lys [Presence] in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -65,7 +65,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "85299-6",
     "display": "BRAF V600E mutant protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
@@ -73,7 +73,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "83061-2",
     "display": "BRAF gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
@@ -81,7 +81,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "53844-7",
     "display": "BRAF gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -89,7 +89,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "58483-9",
     "display": "BRAF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -105,7 +105,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "81705-6",
     "display": "BRAF protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
@@ -113,7 +113,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "42778-1",
     "display": "BRCA1 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -121,7 +121,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21637-4",
     "display": "BRCA1 gene.c.185 del AG [presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -129,7 +129,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21638-2",
     "display": "BRCA1 gene c.5382insC [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -137,7 +137,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21636-6",
     "display": "BRCA1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -145,7 +145,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21639-0",
     "display": "BRCA1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -153,7 +153,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "79207-7",
     "display": "BRCA1 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -161,7 +161,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "50995-0",
     "display": "BRCA1+BRCA2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -169,7 +169,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "59041-4",
     "display": "BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -177,7 +177,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "94191-4",
     "display": "BRCA1+BRCA2 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -185,7 +185,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "42779-9",
     "display": "BRCA2 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -193,7 +193,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "21640-8",
     "display": "BRCA2 gene c.6174delT [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -201,7 +201,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "38531-0",
     "display": "BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -209,7 +209,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "38530-2",
     "display": "BRCA2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -217,7 +217,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "79208-5",
     "display": "BRCA2 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -225,23 +225,23 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "100761-6",
     "display": "PALB2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["BRCA2"]
+    "category": ["BRCA2", "PALB2"]
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "96974-1",
     "display": "PALB2 gene deletion and duplication mutation analysis [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["BRCA2"]
+    "category": ["BRCA2", "PALB2"]
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "81845-0",
     "display": "PALB2 gene full mutation analysis in Blood or Tissue by Sequencing",
     "system": "http://loinc.org",
@@ -313,7 +313,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "94240-9",
     "display": "CDH1 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -321,7 +321,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "21653-1",
     "display": "CDH1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -329,7 +329,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "21652-3",
     "display": "CDH1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -345,7 +345,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "89038-4",
     "display": "CHEK2 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -353,7 +353,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "72518-4",
     "display": "CHEK2 gene c.470C>T and 1100delC [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -361,7 +361,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55770-2",
     "display": "EGFR gene exon 20 insertion [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -369,7 +369,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55768-6",
     "display": "EGFR gene c.2303G>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -377,7 +377,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "85383-8",
     "display": "EGFR gene c.2369C>T actual/normal in Plasma cell-free DNA by Molecular genetics method",
     "system": "http://loinc.org",
@@ -385,7 +385,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55766-0",
     "display": "EGFR gene c.2573T>G [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -393,7 +393,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55767-8",
     "display": "EGFR gene c.2582T>A [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -401,7 +401,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55769-4",
     "display": "EGFR gene c.2369C>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -409,7 +409,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55764-5",
     "display": "EGFR gene exon 19 deletion [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -417,7 +417,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "55765-2",
     "display": "EGFR gene c.2156G>C+2155G>A+2155G>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -425,7 +425,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "21665-5",
     "display": "EGFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -433,7 +433,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "21666-3",
     "display": "EGFR gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -441,7 +441,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "42782-3",
     "display": "Epidermal growth factor receptor.phosphorylated Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -449,7 +449,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "13659-8",
     "display": "Epidermal growth factor receptor [Mass/mass] in Tissue",
     "system": "http://loinc.org",
@@ -457,7 +457,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "14050-9",
     "display": "Epidermal growth factor receptor [Moles/mass] in Tissue",
     "system": "http://loinc.org",
@@ -467,13 +467,13 @@
     "entryType": "biomarkers",
     "cancerType": ["brain", "colon"],
     "code": "45066-8",
-    "display": "Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood LHC-Forms",
+    "display": "Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood\u00a0LHC-Forms",
     "system": "http://loinc.org",
     "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "39004-7",
     "display": "Epidermal growth factor receptor Ag [Presence] in Tissue",
     "system": "http://loinc.org",
@@ -481,7 +481,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["brain", "colon"],
+    "cancerType": ["brain", "colon", "pancreas"],
     "code": "32581-1",
     "display": "Epidermal growth factor receptor Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -489,7 +489,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "85337-4",
     "display": "Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain",
     "system": "http://loinc.org",
@@ -497,7 +497,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "40556-3",
     "display": "Estrogen receptor Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -505,7 +505,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "16112-5",
     "display": "Estrogen receptor [Interpretation] in Tissue",
     "system": "http://loinc.org",
@@ -513,7 +513,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "14130-9",
     "display": "Estrogen receptor [Moles/mass] in Tissue",
     "system": "http://loinc.org",
@@ -529,7 +529,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "96893-3",
     "display": "ERBB2 gene duplication in Tumor by FISH",
     "system": "http://loinc.org",
@@ -537,15 +537,15 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "74885-5",
-    "display": "ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH LHC-Forms",
+    "display": "ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH\u00a0LHC-Forms",
     "system": "http://loinc.org",
     "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "31150-6",
     "display": "ERBB2 gene duplication [Presence] in Tissue by FISH",
     "system": "http://loinc.org",
@@ -553,7 +553,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "74860-8",
     "display": "ERBB2 gene copy number/nucleus in Tissue by FISH",
     "system": "http://loinc.org",
@@ -561,7 +561,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "85318-4",
     "display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH",
     "system": "http://loinc.org",
@@ -569,7 +569,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "49683-6",
     "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH",
     "system": "http://loinc.org",
@@ -577,7 +577,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "42783-1",
     "display": "ERBB2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -617,7 +617,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "uterus"],
     "code": "95784-5",
     "display": "FGFR2 gene rearrangements in Tissue by FISH",
     "system": "http://loinc.org",
@@ -625,7 +625,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "uterus"],
     "code": "38412-3",
     "display": "FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -633,7 +633,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "uterus"],
     "code": "21674-7",
     "display": "FGFR2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -641,7 +641,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "uterus"],
     "code": "21675-4",
     "display": "FGFR2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -721,7 +721,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "48676-1",
     "display": "HER2 [Interpretation] in Tissue",
     "system": "http://loinc.org",
@@ -729,7 +729,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "32996-1",
     "display": "HER2 [Mass/volume] in Serum",
     "system": "http://loinc.org",
@@ -737,7 +737,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "42914-2",
     "display": "HER2 [Mass/volume] in Serum by Immunoassay",
     "system": "http://loinc.org",
@@ -753,7 +753,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "51981-9",
     "display": "HER2 [Presence] in Serum by Immunoassay",
     "system": "http://loinc.org",
@@ -761,7 +761,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "72383-3",
     "display": "HER2 [Presence] in Tissue by Immunoassay",
     "system": "http://loinc.org",
@@ -769,7 +769,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "72382-5",
     "display": "HER2 [Units/volume] in Tissue by Immunoassay",
     "system": "http://loinc.org",
@@ -777,7 +777,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "18474-7",
     "display": "HER2 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -809,7 +809,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "81420-2",
     "display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -817,7 +817,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "83059-6",
     "display": "KRAS gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
@@ -825,7 +825,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "21703-4",
     "display": "KRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -833,7 +833,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "75974-6",
     "display": "KRAS gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -841,7 +841,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "21702-6",
     "display": "KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -849,7 +849,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "53620-1",
     "display": "KRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -865,14 +865,14 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "code": "82535-6",
     "display": "KRAS gene full mutation analysis in Blood or Tissue by Sequencing",
     "system": "http://loinc.org",
     "category": ["KRAS"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "81708-0",
     "display": "Microsatellite markers exhibiting instability/Microsatellite instability markers assessed in Cancer specimen",
@@ -880,15 +880,15 @@
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "81711-4",
-    "display": "Microsatellite instability marker panel - Cancer specimen�LHC-Forms",
+    "display": "Microsatellite instability marker panel - Cancer specimen\ufffdLHC-Forms",
     "system": "http://loinc.org",
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "81696-7",
     "display": "Microsatellite instability markers assessed [#] in Cancer specimen",
@@ -960,7 +960,7 @@
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "81709-8",
     "display": "Microsatellite markers exhibiting instability [#] in Cancer specimen",
@@ -968,7 +968,7 @@
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "43368-0",
     "display": "Microsatellite instability [Identifier] in Tissue by Molecular genetics method Nominal",
@@ -976,7 +976,7 @@
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "81695-9",
     "display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative",
@@ -984,7 +984,7 @@
     "category": ["MSI"]
   },
   {
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas", "uterus"],
     "entryType": "biomarkers",
     "code": "62862-8",
     "display": "Microsatellite instability [Presence] in Tissue by Immune stain",
@@ -1025,7 +1025,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "83060-4",
     "display": "NRAS gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
@@ -1041,7 +1041,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "21720-8",
     "display": "NRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1049,7 +1049,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "21719-0",
     "display": "NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1057,7 +1057,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon"],
+    "cancerType": ["colon", "pancreas"],
     "code": "53621-9",
     "display": "NRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1065,7 +1065,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "colon", "lung"],
+    "cancerType": ["breast", "colon", "lung", "pancreas"],
     "code": "93813-4",
     "display": "NTRK1, NTRK2 and NTRK3 gene rearrangements in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1073,7 +1073,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83053-9",
     "display": "Cells.programmed cell death ligand 1/100 viable tumor cells in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1081,7 +1081,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "96268-8",
     "display": "Monocytes.PD-L1/100 Monocytes in Blood by Flow cytometry (FC)",
     "system": "http://loinc.org",
@@ -1089,7 +1089,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "85147-7",
     "display": "PD-L1 by clone 22C3 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
@@ -1097,7 +1097,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83054-7",
     "display": "PD-L1 by clone 22C3 [Interpretation] in Tissue by Immune stain Narrative",
     "system": "http://loinc.org",
@@ -1105,7 +1105,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83052-1",
     "display": "PD-L1 by clone 22C3 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1113,7 +1113,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "85148-5",
     "display": "PD-L1 by clone 28-8 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
@@ -1121,7 +1121,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83056-2",
     "display": "PD-L1 by clone 28-8 [Interpretation] in Tissue by Immune stain Narrative",
     "system": "http://loinc.org",
@@ -1129,7 +1129,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83055-4",
     "display": "PD-L1 by clone 28-8 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1137,7 +1137,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "85149-3",
     "display": "PD-L1 by clone SP142 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
@@ -1145,7 +1145,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "83057-0",
     "display": "PD-L1 by clone SP142 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1257,7 +1257,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast"],
+    "cancerType": ["colon", "breast", "pancreas", "uterus"],
     "code": "63419-6",
     "display": "PIK3CA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1265,7 +1265,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast"],
+    "cancerType": ["colon", "breast", "pancreas", "uterus"],
     "code": "60033-8",
     "display": "PIK3CA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1273,7 +1273,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast"],
+    "cancerType": ["colon", "breast", "pancreas", "uterus"],
     "code": "83062-0",
     "display": "PIK3CA gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
@@ -1281,7 +1281,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast"],
+    "cancerType": ["colon", "breast", "pancreas", "uterus"],
     "code": "60034-6",
     "display": "PIK3CA gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1305,7 +1305,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "40557-1",
     "display": "Progesterone receptor Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
@@ -1313,7 +1313,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "16113-3",
     "display": "Progesterone receptor [Interpretation] in Tissue",
     "system": "http://loinc.org",
@@ -1321,7 +1321,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "10861-3",
     "display": "Progesterone receptor [Mass/mass] in Tissue",
     "system": "http://loinc.org",
@@ -1329,7 +1329,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "uterus"],
     "code": "31207-4",
     "display": "Progesterone receptor [Moles/mass] in Tissue",
     "system": "http://loinc.org",
@@ -1345,7 +1345,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "81706-4",
     "display": "Phosphatase and tensin homolog (PTEN) protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
@@ -1353,7 +1353,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "81710-6",
     "display": "PTEN gene [Presence] in Cancer specimen by FISH",
     "system": "http://loinc.org",
@@ -1361,7 +1361,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "83063-8",
     "display": "PTEN gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
@@ -1369,7 +1369,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "94223-5",
     "display": "PTEN gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1377,7 +1377,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "47969-1",
     "display": "PTEN gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1393,7 +1393,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "95284-6",
     "display": "PINK1 gene deletion in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1401,7 +1401,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["colon", "breast", "lung"],
+    "cancerType": ["colon", "breast", "lung", "pancreas", "uterus"],
     "code": "47968-3",
     "display": "PINK1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
@@ -1481,7 +1481,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "94216-9",
     "display": "STK11 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1489,7 +1489,7 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["breast", "lung"],
+    "cancerType": ["breast", "lung", "pancreas"],
     "code": "53795-1",
     "display": "STK11 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
@@ -1505,10 +1505,234 @@
   },
   {
     "entryType": "biomarkers",
-    "cancerType": ["uterus"],
+    "cancerType": ["pancreas", "uterus"],
     "code": "94077-5",
     "display": "Tumor mutation burden [Interpretation]",
     "system": "http://loinc.org",
     "category": ["TMB"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "100027-2",
+    "display": "SMAD4 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["SMAD4"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "77624-5",
+    "display": "SMAD4 gene full mutation analysis in Blood or Tissue by Sequencing",
+    "system": "http://loinc.org",
+    "category": ["SMAD4"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "98279-3",
+    "display": "DNA mismatch repair in Cancer specimen by Immune stain Narrative",
+    "system": "http://loinc.org",
+    "category": ["DMMR", "DNA Mismatch Repair"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "92676-6",
+    "display": "MLH1 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["MLH1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "41086-0",
+    "display": "MLH1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["MLH1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "38536-9",
+    "display": "MLH1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["MLH1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "79416-4",
+    "display": "MLH1 gene deletion and duplication mutation analysis in Blood or Tissue by MLPA",
+    "system": "http://loinc.org",
+    "category": ["MLH1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "38550-0",
+    "display": "MSH2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["MSH2"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "79415-6",
+    "display": "MSH2 gene deletion and duplication mutation analysis in Blood or Tissue by MLPA",
+    "system": "http://loinc.org",
+    "category": ["MSH2"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "41084-5",
+    "display": "MSH2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["MSH2"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "38906-4",
+    "display": "MSH6 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["MSH6"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "79414-9",
+    "display": "MSH6 gene deletion and duplication mutation analysis in Blood or Tissue by MLPA",
+    "system": "http://loinc.org",
+    "category": ["MSH6"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "38921-3",
+    "display": "MSH6 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["MSH6"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "79417-2",
+    "display": "PMS2 gene deletion and duplication mutation analysis in Blood or Tissue by MLPA",
+    "system": "http://loinc.org",
+    "category": ["PMS2"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas", "uterus"],
+    "code": "79419-8",
+    "display": "PMS2 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["PMS2"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "103678-9",
+    "display": "CTNNB1 gene targeted mutation analysis in Tumor by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["CTNNB1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "21659-8",
+    "display": "CTNNB1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["CTNNB1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "21660-6",
+    "display": "CTNNB1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["CTNNB1"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "79418-0",
+    "display": "EPCAM gene exons 8 and 9 deletion and duplication mutation analysis in Blood or Tissue by MLPA",
+    "system": "http://loinc.org",
+    "category": ["EPCAM"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "40959-9",
+    "display": "MUTYH gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["MUTYH"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "41081-1",
+    "display": "MUTYH gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["MUTYH"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["uterus"],
+    "code": "94228-4",
+    "display": "MUTYH gene full mutation analysis in Blood or Tissue by Sequencing",
+    "system": "http://loinc.org",
+    "category": ["MUTYH"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "21614-3",
+    "display": "CDKN2A gene deletion [Presence] in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["CDKN2A"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "89037-6",
+    "display": "CDKN2A gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["CDKN2A"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "53871-0",
+    "display": "HRAS gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
+    "system": "http://loinc.org",
+    "category": ["HRAS"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "21699-4",
+    "display": "HRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["HRAS"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "21698-6",
+    "display": "HRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["HRAS"]
+  },
+  {
+    "entryType": "biomarkers",
+    "cancerType": ["pancreas"],
+    "code": "53623-5",
+    "display": "HRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal",
+    "system": "http://loinc.org",
+    "category": ["HRAS"]
   }
 ]

@@ -1302,5 +1302,13 @@
     "display": "Malignant germ cell neoplasm (morphologic abnormality)",
     "system": "http://snomed.info/sct",
     "category": ["Malignant Germ Cell Neoplasm"]
+  },
+  {
+    "entryType": "cancerSubtype",
+    "cancerType": ["pancreas"],
+    "code": "87737001",
+    "display": "Signet ring cell carcinoma (morphologic abnormality)",
+    "system": "http://snomed.info/sct",
+    "category": ["Signet Ring Carcinoma"]
   }
 ]
