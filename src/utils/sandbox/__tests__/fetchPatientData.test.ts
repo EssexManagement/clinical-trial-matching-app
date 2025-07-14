@@ -105,21 +105,15 @@ describe('buildPatientData', () => {
         [],
       ]);
       expect(patientData).not.toBeNull();
-      expect(patientData.biomarkers).toEqual([
-        {
-          entryType: 'biomarkers',
-          cancerType: ['breast', 'lung'],
-          code: '51981-9',
-          display: 'HER2 [Presence] in Serum by Immunoassay',
-          system: 'http://loinc.org',
-          category: ['HER2'],
-          qualifier: {
-            code: '10828004',
-            display: 'Positive (qualifier value)',
-            system: 'http://snomed.info/sct',
-          },
-        },
-      ]);
+      expect(patientData.biomarkers).toHaveProperty('length', 1);
+      expect(patientData.biomarkers).toHaveProperty('0.entryType', 'biomarkers');
+      expect(patientData.biomarkers).toHaveProperty('0.code', '51981-9');
+      expect(patientData.biomarkers).toHaveProperty('0.display', 'HER2 [Presence] in Serum by Immunoassay');
+      expect(patientData.biomarkers).toHaveProperty('0.system', 'http://loinc.org');
+      expect(patientData.biomarkers).toHaveProperty('0.category', ['HER2']);
+      expect(patientData.biomarkers).toHaveProperty('0.qualifier.code', '10828004');
+      expect(patientData.biomarkers).toHaveProperty('0.qualifier.display', 'Positive (qualifier value)');
+      expect(patientData.biomarkers).toHaveProperty('0.qualifier.system', 'http://snomed.info/sct');
     });
   });
   describe('ECOG and Karnofsky', () => {

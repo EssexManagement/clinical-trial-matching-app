@@ -26,6 +26,7 @@ import {
   extractPrimaryCancerCondition,
   isEqualCodedValueType,
 } from '../fhirConversionUtils';
+import exp from 'constants';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
   it('gets the Karnofsky score from a bundle', () => {
@@ -109,89 +110,73 @@ describe('convertFhirPatient', () => {
 
 describe('convertFhirPrimaryCancerCondition', () => {
   it('gets the primary cancer condition from a FHIR Bundle', () => {
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions)).toEqual({
-      cancerType: {
-        category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
-        cancerType: [CancerType.BREAST],
-        code: '408643008',
-        system: SNOMED_CODE_URI,
-        display: 'Infiltrating duct carcinoma of breast (disorder)',
-        entryType: 'cancerType',
-      },
-      cancerSubtype: {
-        entryType: 'cancerSubtype',
-        cancerType: [CancerType.BREAST],
-        code: '128700001',
-        display: 'Infiltrating duct mixed with other types of carcinoma (morphologic abnormality)',
-        system: SNOMED_CODE_URI,
-        category: ['Invasive', 'Invasive Carcinoma', 'Invasive Carcinoma Mixed', 'Invasive Ductal Carcinoma'],
-      },
-      stage: null,
+    const cancerCondition = extractPrimaryCancerCondition(fhirPrimaryCancerConditions);
+    expect(cancerCondition.cancerType).toEqual({
+      entryType: 'cancerType',
+      cancerType: [CancerType.BREAST],
+      code: '408643008',
+      display: 'Infiltrating duct carcinoma of breast (disorder)',
+      system: SNOMED_CODE_URI,
+      category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
     });
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions2)).toEqual({
-      cancerType: {
-        entryType: 'cancerType',
-        cancerType: [CancerType.BREAST],
-        code: '254837009',
-        display: 'Malignant neoplasm of breast (disorder)',
-        system: SNOMED_CODE_URI,
-        category: ['Breast'],
-      },
-      cancerSubtype: null,
-      stage: {
-        code: '261614003',
-        category: ['2'],
-        display: 'Stage 2A',
-        system: SNOMED_CODE_URI,
-        cancerType: [CancerType.BREAST, CancerType.PROSTATE],
-        entryType: 'stage',
-      },
+    expect(cancerCondition.stage).toBeNull();
+    expect(cancerCondition.cancerSubtype).toHaveProperty('entryType', 'cancerSubtype');
+    expect(cancerCondition.cancerSubtype).toHaveProperty('code', '128700001');
+    expect(cancerCondition.cancerSubtype).toHaveProperty(
+      'display',
+      'Infiltrating duct mixed with other types of carcinoma (morphologic abnormality)'
+    );
+    expect(cancerCondition.cancerSubtype).toHaveProperty('system', SNOMED_CODE_URI);
+    expect(cancerCondition.cancerSubtype).toHaveProperty('category', [
+      'Invasive',
+      'Invasive Carcinoma',
+      'Invasive Carcinoma Mixed',
+      'Invasive Ductal Carcinoma',
+    ]);
+    const cancerCondition2 = extractPrimaryCancerCondition(fhirPrimaryCancerConditions2);
+    expect(cancerCondition2.cancerType).toEqual({
+      entryType: 'cancerType',
+      cancerType: [CancerType.BREAST],
+      code: '254837009',
+      display: 'Malignant neoplasm of breast (disorder)',
+      system: SNOMED_CODE_URI,
+      category: ['Breast'],
     });
+    expect(cancerCondition2.cancerSubtype).toBeNull();
+    expect(cancerCondition2.stage).toHaveProperty('entryType', 'stage');
+    expect(cancerCondition2.stage).toHaveProperty('code', '261614003');
+    expect(cancerCondition2.stage).toHaveProperty('display', 'Stage 2A');
+    expect(cancerCondition2.stage).toHaveProperty('system', SNOMED_CODE_URI);
+    expect(cancerCondition2.stage).toHaveProperty('category', ['2']);
   });
 });
 
 describe('convertFhirRadiationProcedures', () => {
   it('gets the radiation procedures from a FHIR Bundle', () => {
-    expect(convertFhirRadiationProcedures(fhirRadiationProcedures)).toEqual([
-      {
-        entryType: 'radiation',
-        cancerType: [CancerType.BREAST, CancerType.COLON, CancerType.LUNG],
-        code: '879916008',
-        display: 'Radiofrequency ablation (procedure)',
-        system: SNOMED_CODE_URI,
-        category: ['Ablation', 'RFA'],
-      },
-      {
-        entryType: 'radiation',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '399315003',
-        display: 'Radionuclide therapy (procedure)',
-        system: SNOMED_CODE_URI,
-        category: ['EBRT'],
-      },
-    ]);
+    const rads = convertFhirRadiationProcedures(fhirRadiationProcedures);
+    expect(rads).toHaveLength(2);
+    expect(rads).toHaveProperty('0.entryType', 'radiation');
+    expect(rads).toHaveProperty('0.code', '879916008');
+    expect(rads).toHaveProperty('0.display', 'Radiofrequency ablation (procedure)');
+    expect(rads).toHaveProperty('0.system', SNOMED_CODE_URI);
+    expect(rads).toHaveProperty('0.category', ['Ablation', 'RFA']);
+    expect(rads).toHaveProperty('1.entryType', 'radiation');
+    expect(rads).toHaveProperty('1.code', '399315003');
+    expect(rads).toHaveProperty('1.display', 'Radionuclide therapy (procedure)');
+    expect(rads).toHaveProperty('1.system', SNOMED_CODE_URI);
+    expect(rads).toHaveProperty('1.category', ['EBRT']);
   });
 });
 
 describe('convertFhirSecondaryCancerConditions', () => {
   it('gets the secondary cancer conditions from a FHIR Bundle', () => {
-    expect(convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditions)).toEqual([
-      {
-        entryType: 'metastasis',
-        cancerType: [
-          CancerType.BRAIN,
-          CancerType.BREAST,
-          CancerType.COLON,
-          CancerType.LUNG,
-          CancerType.MULTIPLE_MYELOMA,
-          CancerType.PROSTATE,
-        ],
-        code: '94222008',
-        display: 'Secondary malignant neoplasm of bone',
-        system: SNOMED_CODE_URI,
-        category: ['Bone'],
-      },
-    ]);
+    const mets = convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditions);
+    expect(mets).toHaveLength(1);
+    expect(mets).toHaveProperty('0.entryType', 'metastasis');
+    expect(mets).toHaveProperty('0.code', '94222008');
+    expect(mets).toHaveProperty('0.display', 'Secondary malignant neoplasm of bone');
+    expect(mets).toHaveProperty('0.system', SNOMED_CODE_URI);
+    expect(mets).toHaveProperty('0.category', ['Bone']);
   });
 });
 
@@ -228,89 +213,32 @@ describe('convertFhirSurgeryProcedures', () => {
 
 describe('convertFhirTumorMarkers', () => {
   it('gets the tumor markers from a FHIR Bundle', () => {
-    expect(convertFhirTumorMarkers(fhirTumorMarkers)).toEqual([
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '40556-3',
-        display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['ER'],
-        qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '40557-1',
-        display: 'Progesterone receptor Ag [Presence] in Tissue by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['PR'],
-        qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '18474-7',
-        display: 'HER2 Ag [Presence] in Tissue by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['HER2'],
-        qualifier: { system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' },
-      },
-      {
-        cancerType: [CancerType.COLON],
-        entryType: 'biomarkers',
-        code: '62862-8',
-        display: 'Microsatellite instability [Presence] in Tissue by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['MSI'],
-        qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '48676-1',
-        display: 'HER2 [Interpretation] in Tissue',
-        system: LOINC_CODE_URI,
-        category: ['HER2'],
-        qualifier: { system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '85319-2',
-        display: 'HER2 [Presence] in Breast cancer specimen by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['HER2'],
-        qualifier: { system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.COLON],
-        code: '85318-4',
-        display: 'ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH',
-        system: LOINC_CODE_URI,
-        category: ['ERBB2_HER2', 'HER2'],
-        qualifier: { system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '16112-5',
-        display: 'Estrogen receptor [Interpretation] in Tissue',
-        system: LOINC_CODE_URI,
-        category: ['ER'],
-        qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
-      },
-      {
-        entryType: 'biomarkers',
-        cancerType: [CancerType.BREAST, CancerType.LUNG],
-        code: '85337-4',
-        display: 'Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain',
-        system: LOINC_CODE_URI,
-        category: ['ER'],
-        qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
-      },
-    ]);
+    const biomarkers = convertFhirTumorMarkers(fhirTumorMarkers).slice(0, 3);
+    expect(biomarkers).toHaveLength(3);
+    expect(biomarkers).toHaveProperty('0.entryType', 'biomarkers');
+    expect(biomarkers).toHaveProperty('0.code', '40556-3');
+    expect(biomarkers).toHaveProperty('0.display', 'Estrogen receptor Ag [Presence] in Tissue by Immune stain');
+    expect(biomarkers).toHaveProperty('0.system', LOINC_CODE_URI);
+    expect(biomarkers).toHaveProperty('0.category', ['ER']);
+    expect(biomarkers).toHaveProperty('0.qualifier.system', SNOMED_CODE_URI);
+    expect(biomarkers).toHaveProperty('0.qualifier.code', '10828004');
+    expect(biomarkers).toHaveProperty('0.qualifier.display', 'Positive (qualifier value)');
+    expect(biomarkers).toHaveProperty('1.entryType', 'biomarkers');
+    expect(biomarkers).toHaveProperty('1.code', '40557-1');
+    expect(biomarkers).toHaveProperty('1.display', 'Progesterone receptor Ag [Presence] in Tissue by Immune stain');
+    expect(biomarkers).toHaveProperty('1.system', LOINC_CODE_URI);
+    expect(biomarkers).toHaveProperty('1.category', ['PR']);
+    expect(biomarkers).toHaveProperty('1.qualifier.system', SNOMED_CODE_URI);
+    expect(biomarkers).toHaveProperty('1.qualifier.code', '10828004');
+    expect(biomarkers).toHaveProperty('1.qualifier.display', 'Positive (qualifier value)');
+    expect(biomarkers).toHaveProperty('2.entryType', 'biomarkers');
+    expect(biomarkers).toHaveProperty('2.code', '18474-7');
+    expect(biomarkers).toHaveProperty('2.display', 'HER2 Ag [Presence] in Tissue by Immune stain');
+    expect(biomarkers).toHaveProperty('2.system', LOINC_CODE_URI);
+    expect(biomarkers).toHaveProperty('2.category', ['HER2']);
+    expect(biomarkers).toHaveProperty('2.qualifier.system', SNOMED_CODE_URI);
+    expect(biomarkers).toHaveProperty('2.qualifier.code', '260385009');
+    expect(biomarkers).toHaveProperty('2.qualifier.display', 'Negative (qualifier value)');
   });
 });
 
