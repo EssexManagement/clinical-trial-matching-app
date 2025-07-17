@@ -26,7 +26,6 @@ import {
   extractPrimaryCancerCondition,
   isEqualCodedValueType,
 } from '../fhirConversionUtils';
-import exp from 'constants';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
   it('gets the Karnofsky score from a bundle', () => {
