@@ -1,4 +1,14 @@
-const allowedCancerTypes = ['bladder', 'brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'];
+const allowedCancerTypes = [
+  'bladder',
+  'brain',
+  'breast',
+  'colon',
+  'lung',
+  'multipleMyeloma',
+  'prostate',
+  'pancreas',
+  'uterus',
+];
 const allowedSiteRubrics = ['none', 'site1', 'site2'];
 const enabledMatchingServices = process.env.MATCHING_SERVICES;
 if (!enabledMatchingServices || /^\s*$/.test(enabledMatchingServices)) {

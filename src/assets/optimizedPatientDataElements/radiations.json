@@ -9,7 +9,7 @@
   },
   {
     "entryType": "radiation",
-    "cancerType": ["breast", "colon", "lung"],
+    "cancerType": ["breast", "colon", "lung", "uterus"],
     "code": "113120007",
     "display": "Interstitial brachytherapy (procedure)",
     "system": "http://snomed.info/sct",
@@ -17,7 +17,7 @@
   },
   {
     "entryType": "radiation",
-    "cancerType": ["breast", "colon", "lung"],
+    "cancerType": ["breast", "colon", "lung", "uterus"],
     "code": "152198000",
     "display": "Brachytherapy (procedure)",
     "system": "http://snomed.info/sct",
@@ -177,7 +177,7 @@
   },
   {
     "entryType": "radiation",
-    "cancerType": ["breast", "colon", "lung"],
+    "cancerType": ["breast", "colon", "lung", "uterus"],
     "code": "384692006",
     "display": "Intracavitary brachytherapy (procedure)",
     "system": "http://snomed.info/sct",
@@ -361,7 +361,7 @@
   },
   {
     "entryType": "radiation",
-    "cancerType": ["breast", "colon", "lung"],
+    "cancerType": ["breast", "colon", "lung", "pancreas"],
     "code": "879916008",
     "display": "Radiofrequency ablation (procedure)",
     "system": "http://snomed.info/sct",
@@ -478,5 +478,29 @@
     "display": "Radiofrequency ablation using ultrasound guidance (procedure)",
     "system": "http://snomed.info/sct",
     "category": ["RFA"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "395096001",
+    "display": "Stereotactic radiotherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["SRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["pancreas"],
+    "code": "870385001",
+    "display": "Hypofractionated radiation therapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["uterus", "pancreas"],
+    "code": "33195004",
+    "display": "External beam radiation therapy procedure (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas", "uterus"],
     "code": "94222008",
     "display": "Secondary malignant neoplasm of bone",
     "system": "http://snomed.info/sct",
@@ -9,7 +9,7 @@
   },
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas", "uterus"],
     "code": "94381002",
     "display": "Secondary malignant neoplasm of liver",
     "system": "http://snomed.info/sct",
@@ -17,7 +17,7 @@
   },
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas", "uterus"],
     "code": "94253005",
     "display": "Secondary malignant neoplasm of chest wall",
     "system": "http://snomed.info/sct",
@@ -25,7 +25,7 @@
   },
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas", "uterus"],
     "code": "94391008",
     "display": "Secondary malignant neoplasm of lung",
     "system": "http://snomed.info/sct",
@@ -33,7 +33,7 @@
   },
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "pancreas", "uterus"],
     "code": "94392001",
     "display": "Secondary malignant neoplasm of lymph node",
     "system": "http://snomed.info/sct",
@@ -65,10 +65,66 @@
   },
   {
     "entryType": "metastasis",
-    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate", "uterus"],
     "code": "94225005",
     "display": "Secondary malignant neoplasm of brain",
     "system": "http://snomed.info/sct",
     "category": ["Brain"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "prostate"],
+    "code": "94459006",
+    "display": "Secondary malignant neoplasm of pancreas",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon"],
+    "code": "94665001",
+    "display": "Secondary malignant neoplasm of uterus",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "pancreas", "prostate", "uterus"],
+    "code": "94582005",
+    "display": "Secondary malignant neoplasm of soft tissues of abdomen",
+    "system": "http://snomed.info/sct",
+    "category": ["Abdomen"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "pancreas", "prostate", "uterus"],
+    "code": "94480000",
+    "display": "Secondary malignant neoplasm of pelvis",
+    "system": "http://snomed.info/sct",
+    "category": ["Pelvis"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "prostate", "uterus", "pancreas"],
+    "code": "94594001",
+    "display": "Secondary malignant neoplasm of soft tissues of thorax",
+    "system": "http://snomed.info/sct",
+    "category": ["Chest"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "pancreas", "prostate", "uterus"],
+    "code": "94627008",
+    "display": "Secondary malignant neoplasm of peritoneum",
+    "system": "http://snomed.info/sct",
+    "category": ["Peritoneum"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["bladder", "breast", "colon", "lung", "multipleMyeloma", "pancreas", "prostate", "uterus"],
+    "code": "94346004",
+    "display": "Secondary malignant neoplasm of intestinal tract",
+    "system": "http://snomed.info/sct",
+    "category": ["Intestine"]
   }
 ]

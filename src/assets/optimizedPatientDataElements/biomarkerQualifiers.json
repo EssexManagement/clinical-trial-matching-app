@@ -8,5 +8,15 @@
     "code": "260385009",
     "display": "Negative (qualifier value)",
     "system": "http://snomed.info/sct"
+  },
+  {
+    "code": "75540009",
+    "display": "High (qualifier value)",
+    "system": "http://snomed.info/sct"
+  },
+  {
+    "code": "62482003",
+    "display": "Low (qualifier value)",
+    "system": "http://snomed.info/sct"
   }
 ]

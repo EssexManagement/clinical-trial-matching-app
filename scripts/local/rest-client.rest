@@ -4,13 +4,13 @@ content-type: application/json; charset=UTF-8
 user-agent: Clinical-Trial-Matching-Wrapper
 
   {
-    "lat":"32.813992",
-    "lng":"-96.842808",
+    "lat":"27.968062",
+    "lng":"-82.479089",
     "distance":null,
     "biomarkers":[],
     "stage":null,
-    "cancerName":"ovarian",
-    "cancerType":null,
+    "cancerName":"bladder",
+    "cancerType":"squamous_cell_carcinoma",
     "cancerSubType":null,
     "ecog":null,
     "karnofsky":null,
@@ -53,37 +53,27 @@ Authorization: Bearer {{cb_token}}
     "filter": {
       "condition": {
         "valueSetId": "2.16.840.1.113883.6.96",
-        "valueId": "93934004"
+        "valueId": "255108000"
       },
       "countries": ["US"],
       "eligibility": [
+        { "fieldId": "6", "mode": "", "value": "01011988" },
         {
-          "fieldId": "6",
+          "fieldId": "19",
           "mode": "",
-          "value": "01012001"
+          "values": [
+            { "valueSetId": "2.16.840.1.113883.6.96", "valueId": "1162767002" }
+          ]
         }
       ],
       "distance": {
-        "distance": 1500,
-        "distanceUnit": "mi",
-        "from": {
-          "lat": 39.461302,
-          "lon": -98.325251
-        }
+          "distance": 20,
+          "distanceUnit": "mi",
+          "from": { "lat": 27.968062, "lon": -82.479089}
       }
     },
-    "sort": [
-      {
-        "field": "distance",
-        "order": "asc"
-      }
-    ],
-    "origin": {
-      "from": {
-        "lat": 39.461302,
-        "lon": -98.325251
-      }
-    }
+    # "sort": [{ "field": "distance", "order": "asc" }],
+    "origin": { "from": { "lat": 27.968062, "lon": -82.479089 } }
   }
 
 ### GET CTS API

@@ -48,20 +48,15 @@ describe('extractBiomakerCodes()', () => {
 
 describe('convertCodesToBiomarkers()', () => {
   it('recreates the qualifier', () => {
-    expect(convertCodesToBiomarkers(['260385009:31150-6'])).toEqual([
-      {
-        entryType: 'biomarkers',
-        cancerType: ['colon'],
-        code: '31150-6',
-        display: 'ERBB2 gene duplication [Presence] in Tissue by FISH',
-        system: 'http://loinc.org',
-        category: ['ERBB2_HER2', 'HER2'],
-        qualifier: {
-          code: '260385009',
-          display: 'Negative (qualifier value)',
-          system: 'http://snomed.info/sct',
-        },
-      },
-    ]);
+    const biomarkers = convertCodesToBiomarkers(['260385009:31150-6']);
+    expect(biomarkers).toHaveLength(1);
+    expect(biomarkers).toHaveProperty('0.entryType', 'biomarkers');
+    expect(biomarkers).toHaveProperty('0.code', '31150-6');
+    expect(biomarkers).toHaveProperty('0.display', 'ERBB2 gene duplication [Presence] in Tissue by FISH');
+    expect(biomarkers).toHaveProperty('0.system', 'http://loinc.org');
+    expect(biomarkers).toHaveProperty('0.category', ['ERBB2_HER2', 'HER2']);
+    expect(biomarkers).toHaveProperty('0.qualifier.code', '260385009');
+    expect(biomarkers).toHaveProperty('0.qualifier.display', 'Negative (qualifier value)');
+    expect(biomarkers).toHaveProperty('0.qualifier.system', 'http://snomed.info/sct');
   });
 });

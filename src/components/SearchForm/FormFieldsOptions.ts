@@ -25,8 +25,15 @@ const applyRestriction = (restricted: Partial<CodedValueType>[], original: Coded
 
 export const getJoinedCategories = (option: CodedValueType): string => option.category.join(' | ');
 
-const byAscendingJoinedCategory = (first: CodedValueType, second: CodedValueType): number =>
-  getJoinedCategories(first).localeCompare(getJoinedCategories(second));
+const compareByCategoriesThenDisplay = (first: CodedValueType, second: CodedValueType): number => {
+  const categoryCompare = getJoinedCategories(first).localeCompare(getJoinedCategories(second));
+  if (categoryCompare !== 0) {
+    // sort by category first
+    return categoryCompare;
+  }
+  // sort by display within the same category
+  return first.display.localeCompare(second.display);
+};
 
 const byAscendingScore = (first: Score, second: Score): number => first.valueInteger - second.valueInteger;
 
@@ -70,7 +77,21 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
   had prior treatments for a different condition. */
   const unrestricted = {
     biomarkers: biomarkers
-      .map(biomarker => biomarkerQualifiers.map((qualifier: Coding) => ({ ...biomarker, qualifier })))
+      .filter(b => !(b.category[0] === 'TMB' && b.category.length === 1))
+      .map(b =>
+        biomarkerQualifiers
+          .filter(q => !(q.display.startsWith('High') || q.display.startsWith('Low')))
+          .map(q => ({ ...b, qualifier: q }))
+      )
+      .concat(
+        biomarkers
+          .filter(b => b.category[0] === 'TMB' && b.category.length === 1)
+          .map(b =>
+            biomarkerQualifiers
+              .filter(q => q.display.startsWith('High') || q.display.startsWith('Low'))
+              .map(q => ({ ...b, qualifier: q }))
+          )
+      )
       .flat() as Biomarker[],
     cancerSubtype: getCancerSpecificCodes(selectedCancerType, cancerSubtypes as CodedValueType[]),
     cancerType: (cancerTypes as CodedValueType[]).map(createRestrictedAndUnrestrictedValues).flat(),
@@ -95,7 +116,7 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
     if (Array.isArray(newState[field]) && newState[field].length !== 0) {
       const firstEntry = newState[field][0];
       if ('category' in firstEntry) {
-        newState[field] = [...newState[field]].sort(byAscendingJoinedCategory);
+        newState[field] = [...newState[field]].sort(compareByCategoriesThenDisplay);
       }
       if ('valueInteger' in firstEntry) {
         newState[field] = [...newState[field]].sort(byAscendingScore);
