@@ -18,7 +18,13 @@ param (
     [switch]$NoConfigureWebapps = $false,
     # If $true, skip anything that would involve network access. Currently this
     # only affects the JS script portion
-    [switch]$NoNetwork = $false
+    [switch]$NoNetwork = $false,
+    # The name of the website to create in IIS
+    # passed as an argument to clinical-trial-matching-app\scripts\install.js
+    [string]$WebsiteName = "CTMS",
+    # The port of the website in IIS
+    # passed as an argument to clinical-trial-matching-app\scripts\install.js
+    [int]$WebsitePort = 80
 )
 
 # Config for various prereqs, moved here to make updating them easier
@@ -148,8 +154,10 @@ class CTMSInstaller {
     [boolean]$NoNetwork
     [string]$CurrentActivity
     [string]$CurrentStatus
+    [string]$WebsiteName
+    [int]$WebsitePort
 
-    CTMSInstaller([string]$InstallPath, [string]$CACerts) {
+    CTMSInstaller([string]$InstallPath, [string]$CACerts, [string]$WebsiteName, [int]$WebsitePort) {
         $this.InstallPath = $InstallPath
         $this.InstallersPath = "$InstallPath\installers"
         if ($CACerts.Length -gt 4) {
@@ -163,7 +171,9 @@ class CTMSInstaller {
         $this.SkipBuild = $false
         $this.SkipWebappConfigure = $false
         $this.WrapperNames = @("default")
-        $this.CurrentActivity = "Installing CTMS"
+        $this.CurrentActivity = "Installing $($WebsiteName)"
+        $this.WebsiteName = $WebsiteName
+        $this.WebsitePort = $WebsitePort
     }
 
     [void]StartActivity([string]$Activity) {
@@ -347,7 +357,7 @@ EnableFSMonitor=Disabled
       Write-Progress -Activity "done" -Status "done" -Completed
       # Force color output in the install script
       $Env:FORCE_COLOR = 1
-      $args = @("$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
+      $args = @("$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS", "--website-name", $this.WebsiteName, "--website-port", $this.WebsitePort)
       if ($this.HasExtraCerts) {
         $args += "--extra-ca-certs"
         $args += $this.CACertsPEM
@@ -379,8 +389,8 @@ EnableFSMonitor=Disabled
         if ($LastExitCode -ne 0) {
             throw "Unable to restart IIS."
         }
-        $this.StartSubtask("Starting CTMS website...")
-        Start-Website "CTMS"
+        $this.StartSubtask("Starting $($this.WebsiteName) website...")
+        Start-Website $this.WebsiteName
         $this.Done("Website started.")
     }
 
@@ -438,7 +448,7 @@ if (Test-Path -Path $ExtraCAs -PathType "Leaf") {
 }
 
 try {
-  $installer = [CTMSInstaller]::New($InstallPath, $ca_file)
+  $installer = [CTMSInstaller]::New($InstallPath, $ca_file, $WebsiteName, $WebsitePort)
   $installer.SkipInstall = $NoInstall
   $installer.SkipGitPull = $NoGitPull
   $installer.SkipBuild = $NoBuild

@@ -245,7 +245,7 @@ for (let idx = 2; idx < process.argv.length; idx++) {
         protocol = value;
       } else if (arg == '--hostname') {
         hostname = value;
-      } else if (arg == '--port') {
+      } else if (arg == '--port' && parseInt(value)) {
         port = parseInt(value);
       } else if (arg == '--wrappers') {
         wrappers.push(...value.split(/\s*,\s*/));
@@ -274,6 +274,7 @@ function invokeRestMethod(options, body) {
     options.hostname = hostname;
   }
   const reqPort = options.port ?? options.defaultPort ?? (protocol === 'https' ? 443 : 80);
+  log(JSON.stringify(options));
   return new Promise((resolve, reject) => {
     const request = http.request(options, res => {
       log(
@@ -385,7 +386,7 @@ function invokeRestMethod(options, body) {
 const colors = process.stdout.isTTY && process.stdout.hasColors();
 
 function testStart(message) {
-  process.stdout.write('  ' + message);
+  process.stdout.write('  ' + message + '\n');
 }
 
 function testPassed(warnings) {
@@ -482,6 +483,7 @@ async function runTests() {
       try {
         result = await invokeRestMethod(
           {
+            port: port,
             path: `/${wrapper}/getClinicalTrial`,
             headers: {
               'Content-Type': 'application/json',

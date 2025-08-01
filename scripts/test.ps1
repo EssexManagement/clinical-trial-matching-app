@@ -4,7 +4,8 @@ param (
   # Name of wrappers to install
   [string[]]$Wrappers = @(),
   [string]$Protocol = "http",
-  [string]$Hostname = "localhost"
+  [string]$Hostname = "localhost",
+  [int]$Port = $null
 )
 
-node "clinical-trial-matching-app\scripts\test.js" --protocol $Protocol --hostname $Hostname --wrappers ($Wrappers -join ",")
+node "clinical-trial-matching-app\scripts\test.js" --protocol $Protocol --hostname $Hostname --port $Port --wrappers ($Wrappers -join ",")

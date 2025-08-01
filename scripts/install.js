@@ -614,6 +614,10 @@ class CTMSInstaller {
    * Server name. Currently solely used as the ID for the website for IIS.
    */
   websiteName = 'CTMS';
+  /**
+   * Port number. Currently solely used as the port for the website in IIS.
+   */
+  websitePort = 80;
   // TTY color sequences
   _errorStyle = '\x1b[91;40m';
   _warningStyle = '\x1b[93;40m';
@@ -621,10 +625,12 @@ class CTMSInstaller {
   _successStyle = '\x1b[32;40m';
   _resetStyle = '\x1b[0m';
 
-  constructor(installPath, extraCAs, wrappers) {
+  constructor(installPath, extraCAs, wrappers, websiteName, websitePort) {
     this.installPath = installPath;
     this.extraCAs = extraCAs;
     this.wrapperNames = wrappers;
+    this.websiteName = websiteName || 'CTMS';
+    this.websitePort = websitePort || 80;
     this.frontend = new CTMSApp();
     this.installedWrappers = [];
     this.failedWrappers = [];
@@ -805,9 +811,7 @@ ${frontendConfig}
     this.startSubtask(`Creating ${this.websiteName} website within IIS...`);
     await runPowerShell(`$website = Get-Website -Name "${escapePowerShell(this.websiteName)}"
       if (-Not $website) {
-        New-Website -Name "${escapePowerShell(this.websiteName)}" -Port 80 -PhysicalPath "${escapePowerShell(
-      this.installPath
-    )}\\clinical-trial-matching-app"
+        New-Website -Name "${escapePowerShell(this.websiteName)}" -Port ${this.websitePort} -PhysicalPath "${escapePowerShell(this.installPath)}\\clinical-trial-matching-app"
       } else {
         Stop-Website "${escapePowerShell(this.websiteName)}"
       }
@@ -906,6 +910,8 @@ const argumentsWithValues = {
   '--extra-ca-certs': EXTRA_CAS,
   '--wrappers': null,
   '--target-server': process.platform === 'win32' ? 'IIS' : 'nginx',
+  '--website-name': 'CTMS',
+  '--website-port': 80,
 };
 
 const argumentFlags = {
@@ -937,7 +943,9 @@ for (let idx = 2; idx < process.argv.length; idx++) {
 const installer = new CTMSInstaller(
   argumentsWithValues['--install-dir'],
   argumentsWithValues['--extra-ca-certs'],
-  argumentsWithValues['--wrappers']
+  argumentsWithValues['--wrappers'],
+  argumentsWithValues['--website-name'],
+  argumentsWithValues['--website-port']
 );
 // Copy over argument flags
 installer.noNetwork = argumentFlags['--no-network'];
