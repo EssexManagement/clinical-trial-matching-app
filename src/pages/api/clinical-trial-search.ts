@@ -178,8 +178,18 @@ async function callWrappers(
   successfuResults.forEach(({ response, serviceName, status, error }) => {
     const subset = [];
     const entries = (response as Bundle).entry;
-    if (!(entries && Array.isArray(entries))) {
+    if (!Array.isArray(entries) || !entries.length) {
       // Effectively continue to the next one
+      console.warn(
+        'No entries found for',
+        serviceName,
+        'entries type is',
+        [typeof entries, 'array:', Array.isArray(entries)],
+        'status is',
+        status,
+        'error is',
+        error
+      );
       return;
     }
     console.log('entries from', serviceName, 'are', entries.length, 'and response is OK');
