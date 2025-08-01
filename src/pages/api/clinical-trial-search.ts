@@ -163,17 +163,46 @@ async function callWrappers(
   // Process the responses that were succcessful
   const occurrences: { [key: TrialID]: MatchingService[] } = {};
   const successfuResults = wrapperResults.filter(result => result.status == 200);
+  console.log('# results received from wrappers:', successfuResults.length);
   const distanceFilteredResults: { [key in MatchingService]?: StudyDetailProps[] } = {};
 
-  successfuResults.forEach(({ response, serviceName }) => {
+  console.log(
+    'params sent to getStudyDetailProps',
+    'patientZipCode:',
+    patientZipCode,
+    'travelDistance:',
+    parseInt(travelDistance),
+    'sendLocationData:',
+    sendLocationData
+  );
+  successfuResults.forEach(({ response, serviceName, status, error }) => {
     const subset = [];
     const entries = (response as Bundle).entry;
-    if (!(entries && Array.isArray(entries))) {
+    if (!Array.isArray(entries) || !entries.length) {
       // Effectively continue to the next one
+      console.warn(
+        'No entries found for',
+        serviceName,
+        'entries type is',
+        [typeof entries, 'array:', Array.isArray(entries)],
+        'status is',
+        status,
+        'error is',
+        error
+      );
       return;
     }
+    console.log('entries from', serviceName, 'are', entries.length, 'and response is OK');
+    let minClosestFacilityDistance = Number.MAX_SAFE_INTEGER;
+    const studyStatusTypes = new Set<string>();
+    let anyMeetingCriteria = false;
     entries.forEach((entry: BundleEntryWithStudy) => {
       const studyDetails: StudyDetailProps = getStudyDetailProps(entry, patientZipCode, serviceName);
+      const studyClosestFacilityDistance = studyDetails.closestFacilities?.[0]?.distance?.quantity;
+
+      if (studyClosestFacilityDistance < minClosestFacilityDistance) {
+        minClosestFacilityDistance = studyClosestFacilityDistance;
+      }
 
       // Function to determine if the results are within range
       const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
@@ -182,6 +211,11 @@ async function callWrappers(
 
       // Only interested in Active and Interventional trials
       const isActiveAndInterventional = (entry: StudyDetailProps): boolean => {
+        studyStatusTypes.add(
+          (entry.status?.label?.toLowerCase() || entry.status?.name?.toLowerCase()) +
+            '_' +
+            (entry.type?.label?.toLowerCase() || entry.type?.name?.toLowerCase())
+        );
         return (
           (entry.status?.label?.toLowerCase() == 'active' || entry.status?.name?.toLowerCase() == 'active') &&
           (entry.type?.label?.toLowerCase() == 'interventional' || entry.type?.name?.toLowerCase() == 'interventional')
@@ -194,6 +228,10 @@ async function callWrappers(
         isActiveAndInterventional(studyDetails) &&
         studyDetails.trialId != 'NCT05885880'
       ) {
+        if (!anyMeetingCriteria) {
+          anyMeetingCriteria = true;
+          console.log('Found at least one study meeting criteria:', studyDetails.trialId, 'provided by', serviceName);
+        }
         if (occurrences[studyDetails.trialId] === undefined) {
           subset.push(studyDetails);
           occurrences[studyDetails.trialId] = [serviceName];
@@ -203,6 +241,16 @@ async function callWrappers(
         }
       }
     });
+    console.log(
+      'minClosestFacilityDistance for',
+      serviceName,
+      'is',
+      minClosestFacilityDistance === Number.MAX_SAFE_INTEGER ? 'None' : minClosestFacilityDistance
+    );
+    console.log('studyStatusTypes for', serviceName, 'are', Array.from(studyStatusTypes).join(', '));
+    if (!anyMeetingCriteria) {
+      console.log('No studies meeting criteria for', serviceName, 'but provided', entries.length, 'entries');
+    }
 
     distanceFilteredResults[serviceName] = subset;
   });
@@ -230,6 +278,7 @@ async function callWrappers(
       .filter(trialOccurrence => trialOccurrence[1].length > 1)
       .sort(sortByOccurence)
       .slice(0, resultsMax);
+    console.log('trialCounts after taking top occurences', trialCounts.length);
 
     // Go through the highest recurring trials first
     results = trialCounts.map(trialOccurrence => {
@@ -269,6 +318,11 @@ async function callWrappers(
     }
   }
 
+  const servicesAcrossResults = results.reduce((acc, result) => {
+    result.source?.split(', ').forEach(service => acc.add(service as MatchingService));
+    return acc;
+  }, new Set<MatchingService>());
+  console.log('Returning', results.length, 'results from services:', servicesAcrossResults);
   return { results, errors };
 }
 
@@ -299,7 +353,9 @@ async function callWrapper(url: string, query: string, serviceName: string): Pro
       body: query,
     });
     handleError(response);
-    return { status: 200, response: await response.json(), serviceName };
+    const res = await response.json();
+    console.log(url, 'returing', res?.total);
+    return { status: 200, response: res, serviceName };
   } catch (error) {
     console.error(error);
     return {
@@ -318,6 +374,7 @@ async function callWrapper(url: string, query: string, serviceName: string): Pro
  */
 function handleError(response: Response) {
   if (!response.ok) {
+    console.error(`Error response from server: ${response.status} ${response.statusText}`);
     throw Error(`Error response from server: ${response.status} ${response.statusText}`);
   }
   return response;
