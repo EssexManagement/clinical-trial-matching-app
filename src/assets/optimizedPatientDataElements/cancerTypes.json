@@ -5081,6 +5081,78 @@
   },
   {
     "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "780821007",
+    "display": "Invasive intraductal papillary-mucinous carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1148551007",
+    "display": "Infiltrating duct carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "792907004",
+    "display": "Adenocarcinoma of pancreatic duct (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "866052009",
+    "display": "Mixed ductal-neuroendocrine carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1197286008",
+    "display": "Primary mixed acinar ductal carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1197283000",
+    "display": "Primary mixed acinar endocrine-ductal carcinoma of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1186735007",
+    "display": "Mixed neuroendocrine-non neuroendocrine neoplasm of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "770602005",
+    "display": "Squamous cell carcinoma of exocrine pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["pancreas"],
+    "code": "1279841001",
+    "display": "Undifferentiated carcinoma with osteoclast-like giant cells of pancreas (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pancreas"]
+  },
+  {
+    "entryType": "cancerType",
     "cancerType": ["uterus"],
     "code": "371973000",
     "display": "Malignant neoplasm of uterus (disorder)",
@@ -5124,6 +5196,374 @@
     "cancerType": ["uterus"],
     "code": "92788005",
     "display": "Carcinoma in situ of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "123845008",
+    "display": "Adenocarcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "765740002",
+    "display": "Adenosarcoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "778066006",
+    "display": "Carcinofibroma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "764952009",
+    "display": "Carcinosarcoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "732201008",
+    "display": "Carcinosarcoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "254878006",
+    "display": "Endometrial carcinoma (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1260086007",
+    "display": "Endometrioid carcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "699358009",
+    "display": "High grade endometrial stromal sarcoma (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "773774000",
+    "display": "High-grade neuroendocrine carcinoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "770559003",
+    "display": "Leiomyosarcoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "699357004",
+    "display": "Low grade endometrial stromal sarcoma (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "449073009",
+    "display": "Malignant epithelial neoplasm of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "449054005",
+    "display": "Malignant epithelial neoplasm of fundus of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "773284000",
+    "display": "Malignant germ cell neoplasm of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188190005",
+    "display": "Malignant neoplasm of cornu of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188189001",
+    "display": "Malignant neoplasm of corpus uteri, excluding isthmus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188192002",
+    "display": "Malignant neoplasm of endometrium of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188191009",
+    "display": "Malignant neoplasm of fundus of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188195000",
+    "display": "Malignant neoplasm of isthmus of uterine body (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "188193007",
+    "display": "Malignant neoplasm of myometrium of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "109879008",
+    "display": "Overlapping malignant neoplasm of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1156804004",
+    "display": "Peripheral neuroectodermal neoplasm of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "107791000119107",
+    "display": "Primary adenosquamous carcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "107771000119106",
+    "display": "Primary malignant clear cell neoplasm of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1260116000",
+    "display": "Primary malignant stromal sarcoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "722681008",
+    "display": "Primary mixed adenocarcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "722679006",
+    "display": "Primary mucinous adenocarcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1197266009",
+    "display": "Primary papillary carcinoma of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1197260003",
+    "display": "Primary poorly differentiated endocrine carcinoma of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1162286009",
+    "display": "Primary rhabdomyosarcoma of fundus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1162280003",
+    "display": "Primary rhabdomyosarcoma of isthmus of uterine body (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "722680009",
+    "display": "Primary serous adenocarcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "722682001",
+    "display": "Primary small cell carcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "733359005",
+    "display": "Primary squamous cell carcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "766247009",
+    "display": "Primitive neuroectodermal tumor of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "763409006",
+    "display": "Rhabdomyosarcoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1255385002",
+    "display": "Rhabdomyosarcoma of endometrium of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1255628005",
+    "display": "Rhabdomyosarcoma of myometrium of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1162311007",
+    "display": "Sarcoma of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "447266004",
+    "display": "Sarcoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1230318000",
+    "display": "Serous carcinoma of body of uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "764737005",
+    "display": "Squamous cell carcinoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "785807007",
+    "display": "Transitional cell carcinoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "766758001",
+    "display": "Undifferentiated carcinoma of corpus uteri (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1255394008",
+    "display": "Undifferentiated carcinoma of endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Uterus"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["uterus"],
+    "code": "1288024001",
+    "display": "Well-differentiated neuroendocrine tumor of corpus uteri (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Uterus"]
   }
