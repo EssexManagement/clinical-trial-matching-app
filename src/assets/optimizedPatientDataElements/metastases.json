@@ -126,5 +126,13 @@
     "display": "Secondary malignant neoplasm of intestinal tract",
     "system": "http://snomed.info/sct",
     "category": ["Intestine"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["lung", "colon", "pancreas"],
+    "code": "94603006",
+    "display": "Secondary malignant neoplasm of spleen",
+    "system": "http://snomed.info/sct",
+    "category": ["Spleen"]
   }
 ]
