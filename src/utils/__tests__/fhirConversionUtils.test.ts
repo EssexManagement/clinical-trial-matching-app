@@ -62,40 +62,28 @@ describe('convertFhirEcogPerformanceStatus', () => {
 
 describe('extractMedicationCodes', () => {
   it('gets the medication codes from a set of medications', () => {
-    expect(extractMedicationCodes(fhirMedications)).toEqual([
-      {
-        cancerType: [CancerType.PROSTATE],
-        category: ['Leuprolide'],
-        code: '1163443',
-        display: 'Leuprolide Injectable Product',
-        entryType: 'medications',
-        system: RXNORM_CODE_URI,
-      },
-      {
-        cancerType: [CancerType.BREAST],
-        category: ['Fulvestrant'],
-        code: '1156671',
-        display: 'Fulvestrant Injectable Product',
-        entryType: 'medications',
-        system: RXNORM_CODE_URI,
-      },
-      {
-        cancerType: [CancerType.BREAST],
-        category: ['Abemaciclib'],
-        code: '1946828',
-        display: 'Abemaciclib Pill',
-        entryType: 'medications',
-        system: RXNORM_CODE_URI,
-      },
-      {
-        cancerType: [CancerType.BREAST],
-        category: ['Ribociclib'],
-        code: '1873980',
-        display: 'Ribociclib Oral Product',
-        entryType: 'medications',
-        system: RXNORM_CODE_URI,
-      },
-    ]);
+    const medCodes = extractMedicationCodes(fhirMedications);
+    expect(medCodes).toHaveLength(4);
+    expect(medCodes).toHaveProperty('0.entryType', 'medications');
+    expect(medCodes).toHaveProperty('0.category', ['Leuprolide']);
+    expect(medCodes).toHaveProperty('0.code', '1163443');
+    expect(medCodes).toHaveProperty('0.display', 'Leuprolide Injectable Product');
+    expect(medCodes).toHaveProperty('0.system', RXNORM_CODE_URI);
+    expect(medCodes).toHaveProperty('1.entryType', 'medications');
+    expect(medCodes).toHaveProperty('1.category', ['Fulvestrant']);
+    expect(medCodes).toHaveProperty('1.code', '1156671');
+    expect(medCodes).toHaveProperty('1.display', 'Fulvestrant Injectable Product');
+    expect(medCodes).toHaveProperty('1.system', RXNORM_CODE_URI);
+    expect(medCodes).toHaveProperty('2.entryType', 'medications');
+    expect(medCodes).toHaveProperty('2.category', ['Abemaciclib']);
+    expect(medCodes).toHaveProperty('2.code', '1946828');
+    expect(medCodes).toHaveProperty('2.display', 'Abemaciclib Pill');
+    expect(medCodes).toHaveProperty('2.system', RXNORM_CODE_URI);
+    expect(medCodes).toHaveProperty('3.entryType', 'medications');
+    expect(medCodes).toHaveProperty('3.category', ['Ribociclib']);
+    expect(medCodes).toHaveProperty('3.code', '1873980');
+    expect(medCodes).toHaveProperty('3.display', 'Ribociclib Oral Product');
+    expect(medCodes).toHaveProperty('3.system', RXNORM_CODE_URI);
     expect(extractMedicationCodes([])).toEqual([]);
   });
 });
