@@ -39,3 +39,9 @@ sessions.db
 /web.config
 scripts/local/*.json
 scripts/local/http_cache.sqlite
+.github/copilot-instructions.md
+scripts/local/ctsapi_trials.sqlite
+scripts/local/ctsapi_trials_missing_in_acs_can_trial_finder.xlsx
+scripts/local/ctsapi_cancer_us_interventional_open_and_not_yet_open.xlsx
+scripts/local/~*.xlsx
+scripts/local/their_trials.csv

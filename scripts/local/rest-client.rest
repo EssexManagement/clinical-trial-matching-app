@@ -87,3 +87,91 @@ X-API-KEY: {{$processEnv CTS_V2_API_KEY}}
     ],
     "size": 1
   }
+
+### BCT.org
+POST https://www.ctmatch.org/mitre-service-v1/services/bctmatch/bundle/trials
+Content-Type: application/fhir+json
+
+  {
+    "resourceType": "Bundle",
+    "type": "collection",
+    "entry": [
+      {
+        "resource": {
+          "resourceType": "Parameters",
+          "id": "0",
+          "parameter": [
+            {
+              "name": "zipCode",
+              "valueString": "33606"
+            },
+            {
+              "name": "travelRadius",
+              "valueString": "20"
+            }
+          ]
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "Patient",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient"
+            ]
+          },
+          "id": "llA6DTu6FA5gxmRcopqmH",
+          "gender": "female",
+          "birthDate": "1965"
+        },
+        "fullUrl": "urn:uuid:llA6DTu6FA5gxmRcopqmH"
+      },
+      {
+        "resource": {
+          "resourceType": "Condition",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
+            ]
+          },
+          "subject": {
+            "reference": "urn:uuid:llA6DTu6FA5gxmRcopqmH",
+            "type": "Patient"
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254838004",
+                "display": "Carcinoma of breast (disorder)"
+              }
+            ]
+          },
+          "category": [
+            {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "64572001"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+
+### GET CTS API
+POST https://clinicaltrialsapi.cancer.gov/api/v2/trials
+X-API-KEY: {{$processEnv CTS_V2_API_KEY}}
+
+  {
+    "nct_id": "NCT06964412",
+    "include": [
+      "diseases"
+    ],
+    # "exclude": ["eligibility", "sites", "diseases", "biomarkers", "prior_therapy", "arms"],
+    "size": 1
+  }
+
