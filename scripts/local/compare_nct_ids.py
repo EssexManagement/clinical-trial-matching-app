@@ -13,12 +13,12 @@ their_trials = pd.read_csv("./their_trials.csv", header=None)
 mine = set(my_trials["nct_id"])
 theirs = set(their_trials[0])
 
-# %%
-
 with sqlite3.connect("ctsapi_trials.sqlite") as conn:
     series = pd.Series(list(mine.difference(theirs)))
     series.name = "nct_id"
     series.to_sql("missing", conn, if_exists="replace", index=False)
+
+# %%
 
 # # run some queries in SQLite to further investigate
 query = """
@@ -28,12 +28,26 @@ WITH maintype AS (
     LEFT JOIN diseases ON missing.nct_id = diseases.nct_id
         AND inclusion_indicator = 'TREE'
     GROUP BY missing.nct_id
+),
+disease_agg as (
+    SELECT maintype.nct_id, maintype, group_concat(diseases.name, ';') AS lead_dise
+    FROM maintype
+    LEFT JOIN diseases ON maintype.nct_id = diseases.nct_id
+        AND is_lead_disease = true
+    GROUP BY maintype.nct_id
 )
-SELECT maintype.nct_id, maintype, group_concat(diseases.name, ';') AS lead_dise
-FROM maintype
-LEFT JOIN diseases ON maintype.nct_id = diseases.nct_id
-    AND is_lead_disease = true
-GROUP BY maintype.nct_id;
+SELECT dagg.nct_id,
+    dagg.maintype,
+    dagg.lead_dise,
+    t.current_trial_status,
+    t.official_title,
+    t.primary_purpose,
+    t.phase,
+    ct.overallStatus,
+    ct.studyType
+FROM disease_agg dagg
+JOIN trials t ON dagg.nct_id = t.nct_id
+JOIN ctg_trials ct ON dagg.nct_id = ct.nctId
 """
 
 with sqlite3.connect("ctsapi_trials.sqlite") as conn:

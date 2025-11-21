@@ -130,6 +130,7 @@ DB_PATH = "ctsapi_trials.sqlite"
 with CachedSession(
     expire_after=datetime.timedelta(days=1), allowable_methods=["GET", "POST"]
 ) as session:
+    # session.cache.clear()
     maintypes = get_maintypes(session)
     all_trials = []
     for idx, codes in enumerate(tqdm(maintypes["codes"], desc="Maintypes")):
@@ -142,6 +143,9 @@ with CachedSession(
                 "include": [
                     "nct_id",
                     "current_trial_status",
+                    "official_title",
+                    "primary_purpose",
+                    "phase",
                     "diseases.is_lead_disease",
                     "diseases.name",
                     "diseases.inclusion_indicator",
@@ -162,7 +166,9 @@ with CachedSession(
 
     df = pd.json_normalize(all_trials)
     print(f"Total trials gathered: {len(df)}")
-    ids = df[["nct_id", "current_trial_status"]].drop_duplicates(ignore_index=True)
+    ids = df[
+        ["nct_id", "current_trial_status", "official_title", "primary_purpose", "phase"]
+    ].drop_duplicates(ignore_index=True)
     print(f"Total trials after dropping dupes: {len(ids)}")
     diseases = df.explode("diseases", ignore_index=True).drop(
         columns=["sites", "current_trial_status"]
@@ -253,7 +259,7 @@ with sqlite3.connect(DB_PATH) as conn:
                 **BASE_CRITERIA,
                 "CTS API Removal Process": "Tree-level diseases except for those that matched the maintype search; sites outside of United States or sites with statuses not in the sites.recruitment_status list",
                 "CTG API Removal Process": "After merging CTSAPI and CTG trials on NCT ID, removed trials whose CTG overallStatus was not in ['RECRUITING', 'NOT_YET_RECRUITING', 'ENROLLING_BY_INVITATION'] and studyType was not 'INTERVENTIONAL'",
-                "count of trials after CTS API removal process": len(ids),
+                "count of trials before CTG API removal process": len(ids),
                 "count of trials after CTG API removal process": len(ids_merged),
             }
         ).transpose()

@@ -167,11 +167,22 @@ POST https://clinicaltrialsapi.cancer.gov/api/v2/trials
 X-API-KEY: {{$processEnv CTS_V2_API_KEY}}
 
   {
-    "nct_id": "NCT06964412",
+    "nct_id": "NCT06814977",
     "include": [
-      "diseases"
+      "nct_id",
+      "current_trial_status",
+      "study_protocol_type",
+      "official_title",
+      "primary_purpose",
+      "phase",
+      "diseases.is_lead_disease",
+      "diseases.name",
+      "diseases.inclusion_indicator",
+      "diseases.nci_thesaurus_concept_id",
+      "diseases.type",
+      "sites.org_country",
+      "sites.recruitment_status"
     ],
-    # "exclude": ["eligibility", "sites", "diseases", "biomarkers", "prior_therapy", "arms"],
     "size": 1
   }
 
