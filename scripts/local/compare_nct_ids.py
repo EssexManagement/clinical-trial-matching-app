@@ -35,19 +35,24 @@ disease_agg as (
     LEFT JOIN diseases ON maintype.nct_id = diseases.nct_id
         AND is_lead_disease = true
     GROUP BY maintype.nct_id
+),
+ncit_agg as (
+    SELECT dagg.nct_id, dagg.maintype, dagg.lead_dise, group_concat(diseases.nci_thesaurus_concept_id, ';') AS ncit_codes
+    FROM disease_agg dagg
+    LEFT JOIN diseases ON dagg.nct_id = diseases.nct_id
+        AND (is_lead_disease = true OR inclusion_indicator = 'TREE')
+    GROUP BY dagg.nct_id
 )
-SELECT dagg.nct_id,
-    dagg.maintype,
-    dagg.lead_dise,
+SELECT ncit_agg.*,
     t.current_trial_status,
     t.official_title,
     t.primary_purpose,
     t.phase,
     ct.overallStatus,
     ct.studyType
-FROM disease_agg dagg
-JOIN trials t ON dagg.nct_id = t.nct_id
-JOIN ctg_trials ct ON dagg.nct_id = ct.nctId
+FROM ncit_agg
+JOIN trials t ON ncit_agg.nct_id = t.nct_id
+JOIN ctg_trials ct ON ncit_agg.nct_id = ct.nctId
 """
 
 with sqlite3.connect("ctsapi_trials.sqlite") as conn:
