@@ -100,7 +100,7 @@ def chunker(func, chunk_size: int = 300):
 
 
 @chunker
-def get_ctg_trials(nct_ids: list[str], session: CachedSession) -> pd.DataFrame:
+def get_ctg_trials(nct_ids: list[str], session: CachedSession):
     all_results = []
     print(len(nct_ids), "NCT IDs to query CTG for")
     url = f"https://clinicaltrials.gov/api/v2/studies?query.id={' OR '.join(nct_ids)}&fields=OverallStatus|StudyType|NCTId&pageSize=1000&countTotal=true"
