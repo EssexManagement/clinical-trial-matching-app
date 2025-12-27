@@ -1,4 +1,5 @@
 # %%
+import json
 import datetime
 import os
 import sqlite3
@@ -19,21 +20,21 @@ Cancer, Interventional, US Location, Not Yet Open & Open (Recruiting, Enrolling 
 """
 
 TRIAL_STATUSES = [
-    "In Review",
+    # "In Review",
     "Approved",
     "Active",
     "Enrolling by Invitation",
 ]
 SITE_STATUSES = [
-    "in_review",
+    # "in_review",
     "approved",
     "active",
     "enrolling_by_invitation",
 ]
 SITE_STATUSES_UPPER = [status.upper() for status in SITE_STATUSES]
 BASE_CRITERIA = {
-    "sites.org_country": "United States",
-    "sites.recruitment_status": SITE_STATUSES,
+    # "sites.org_country": "United States",
+    # "sites.recruitment_status": SITE_STATUSES,
     "study_protocol_type": "Interventional",
     "current_trial_status": TRIAL_STATUSES,
 }
@@ -72,6 +73,8 @@ def get_trials(session: CachedSession, start: int, **criteria):
 
 
 def gather_trials(session: CachedSession, **criteria):
+    print("Gathering trials with criteria:")
+    print(json.dumps(criteria, indent=2))
     page = get_trials(session=session, start=0, **criteria)
     total = page["total"]
     trials = page["data"]
@@ -128,102 +131,102 @@ def get_ctg_trials(nct_ids: list[str], session: CachedSession):
 
 DB_PATH = "ctsapi_trials.sqlite"
 with CachedSession(
-    expire_after=datetime.timedelta(days=1), allowable_methods=["GET", "POST"]
+    expire_after=datetime.timedelta(days=31), allowable_methods=["GET", "POST"]
 ) as session:
-    # session.cache.clear()
-    maintypes = get_maintypes(session)
+    session.cache.clear()
+    # maintypes = get_maintypes(session)
     all_trials = []
-    for idx, codes in enumerate(tqdm(maintypes["codes"], desc="Maintypes")):
-        maintype_trials = gather_trials(
-            session=session,
-            **{
-                **BASE_CRITERIA,
-                "size": 50 if not DEBUG else 1,
-                "maintype": codes,
-                "include": [
-                    "nct_id",
-                    "current_trial_status",
-                    "official_title",
-                    "primary_purpose",
-                    "phase",
-                    "diseases.is_lead_disease",
-                    "diseases.name",
-                    "diseases.inclusion_indicator",
-                    "diseases.nci_thesaurus_concept_id",
-                    "sites.org_city",
-                    "sites.org_coordinates",
-                    "sites.org_country",
-                    "sites.org_name",
-                    "sites.org_postal_code",
-                    "sites.org_state_or_province",
-                    "sites.recruitment_status",
-                ],
-            },
-        )
-        all_trials.extend(maintype_trials)
-        if DEBUG:
-            break
+    # for idx, codes in enumerate(tqdm(maintypes["codes"], desc="Maintypes")):
+    trials = gather_trials(
+        session=session,
+        **{
+            **BASE_CRITERIA,
+            "size": 50 if not DEBUG else 1,
+            # "maintype": codes,
+            # "include": [
+            #     "nct_id",
+            #     "current_trial_status",
+            #     "official_title",
+            #     "primary_purpose",
+            #     "phase",
+            #     "diseases.is_lead_disease",
+            #     "diseases.name",
+            #     "diseases.inclusion_indicator",
+            #     "diseases.nci_thesaurus_concept_id",
+            #     "sites.org_city",
+            #     "sites.org_coordinates",
+            #     "sites.org_country",
+            #     "sites.org_name",
+            #     "sites.org_postal_code",
+            #     "sites.org_state_or_province",
+            #     "sites.recruitment_status",
+            # ],
+        },
+    )
+    all_trials.extend(trials)
+    # if DEBUG:
+    #     break
 
     df = pd.json_normalize(all_trials)
     print(f"Total trials gathered: {len(df)}")
-    ids = df[
-        ["nct_id", "current_trial_status", "official_title", "primary_purpose", "phase"]
-    ].drop_duplicates(ignore_index=True)
-    print(f"Total trials after dropping dupes: {len(ids)}")
-    diseases = df.explode("diseases", ignore_index=True).drop(
-        columns=["sites", "current_trial_status"]
-    )
-    print(f"Total disease entries after explode: {len(diseases)}")
-    sites = df.explode("sites", ignore_index=True).drop(
-        columns=["diseases", "current_trial_status"]
-    )
-    print(f"Total sites entries after explode: {len(sites)}")
+    # ids = df[
+    #     ["nct_id", "current_trial_status", "official_title", "primary_purpose", "phase"]
+    # ].drop_duplicates(ignore_index=True)
+    # print(f"Total trials after dropping dupes: {len(ids)}")
+    # diseases = df.explode("diseases", ignore_index=True).drop(
+    #     columns=["sites", "current_trial_status"]
+    # )
+    # print(f"Total disease entries after explode: {len(diseases)}")
+    # sites = df.explode("sites", ignore_index=True).drop(
+    #     columns=["diseases", "current_trial_status"]
+    # )
+    # print(f"Total sites entries after explode: {len(sites)}")
 
-    diseases = pd.concat(
-        [
-            diseases.drop(columns=["diseases"]),
-            pd.json_normalize(diseases["diseases"]),
-        ],
-        axis=1,
-    ).drop_duplicates(ignore_index=True)
-    print(
-        f"Total disease entries after normalizing and dropping dupes: {len(diseases)}"
-    )
-    sites = pd.concat(
-        [sites.drop(columns=["sites"]), pd.json_normalize(sites["sites"])],
-        axis=1,
-    ).drop_duplicates(ignore_index=True)
-    print(f"Total site entries after normalizing and dropping dupes: {len(sites)}")
+    # diseases = pd.concat(
+    #     [
+    #         diseases.drop(columns=["diseases"]),
+    #         pd.json_normalize(diseases["diseases"]),
+    #     ],
+    #     axis=1,
+    # ).drop_duplicates(ignore_index=True)
+    # print(
+    #     f"Total disease entries after normalizing and dropping dupes: {len(diseases)}"
+    # )
+    # sites = pd.concat(
+    #     [sites.drop(columns=["sites"]), pd.json_normalize(sites["sites"])],
+    #     axis=1,
+    # ).drop_duplicates(ignore_index=True)
+    # print(f"Total site entries after normalizing and dropping dupes: {len(sites)}")
 
-    all_maintypes = maintypes["codes"].explode().to_list()
-    diseases = diseases[
-        (diseases["inclusion_indicator"] == "TRIAL")
-        | diseases["nci_thesaurus_concept_id"].isin(all_maintypes)
-    ].reset_index(drop=True)
-    print(
-        f"Total disease entries after filtering to trial-level and matching maintype codes: {len(diseases)}"
-    )
+    # all_maintypes = maintypes["codes"].explode().to_list()
+    # diseases = diseases[
+    #     (diseases["inclusion_indicator"] == "TRIAL")
+    #     | diseases["nci_thesaurus_concept_id"].isin(all_maintypes)
+    # ].reset_index(drop=True)
+    # print(
+    #     f"Total disease entries after filtering to trial-level and matching maintype codes: {len(diseases)}"
+    # )
 
-    sites = sites[
-        (sites["org_country"] == "United States")
-        & sites["recruitment_status"].isin(SITE_STATUSES_UPPER)
-    ].reset_index(drop=True)
-    sites = sites.dropna(how="all", axis=1)
-    print(
-        f"Total site entries after filtering to US and valid recruitment statuses: {len(sites)}"
-    )
+    # sites = sites[
+    #     (sites["org_country"] == "United States")
+    #     & sites["recruitment_status"].isin(SITE_STATUSES_UPPER)
+    # ].reset_index(drop=True)
+    # sites = sites.dropna(how="all", axis=1)
+    # print(
+    #     f"Total site entries after filtering to US and valid recruitment statuses: {len(sites)}"
+    # )
 
-    print(f"Querying CTG for {len(ids['nct_id'])} trial statuses...")
-    ctg_ids = get_ctg_trials(ids["nct_id"].to_list(), session=session)
-    ctg_df = pd.json_normalize(ctg_ids)
-    ctg_df.columns = [col.split(".")[-1] for col in ctg_df.columns]
-    print(f"Total CTG trial entries retrieved: {len(ctg_df)}")
+    # print(f"Querying CTG for {len(ids['nct_id'])} trial statuses...")
+    # ctg_ids = get_ctg_trials(ids["nct_id"].to_list(), session=session)
+    # ctg_df = pd.json_normalize(ctg_ids)
+    # ctg_df.columns = [col.split(".")[-1] for col in ctg_df.columns]
+    # print(f"Total CTG trial entries retrieved: {len(ctg_df)}")
 
-    with sqlite3.connect(DB_PATH) as conn:
-        ids.to_sql("trials", conn, if_exists="replace", index=False)
-        diseases.to_sql("diseases", conn, if_exists="replace", index=False)
-        sites.to_sql("sites", conn, if_exists="replace", index=False)
-        ctg_df.to_sql("ctg_trials", conn, if_exists="replace", index=False)
+    # with sqlite3.connect(DB_PATH) as conn:
+    #     ids.to_sql("trials", conn, if_exists="replace", index=False)
+    #     diseases.to_sql("diseases", conn, if_exists="replace", index=False)
+    #     sites.to_sql("sites", conn, if_exists="replace", index=False)
+    #     ctg_df.to_sql("ctg_trials", conn, if_exists="replace", index=False)
 
 # %%
 
