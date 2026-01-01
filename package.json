@@ -33,7 +33,7 @@
     "connect-sqlite3": "^0.9.13",
     "csv-stringify": "^6.3.0",
     "date-fns": "^2.25.0",
-    "express": "^4.17.1",
+    "express": "^4.22.1",
     "express-session": "^1.17.2",
     "fhirclient": "^2.4.0",
     "geolib": "^3.3.3",
