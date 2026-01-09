@@ -37,9 +37,53 @@ export const fetchBundles = async <T extends FhirResource>(
         .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
         .join('&')
     : '';
-  return await fhirClient.request<Bundle[]>(`${resourceType}?patient=${fhirClient.getPatientId()}${extra}`, {
-    pageLimit: 0,
-  });
+
+  const bundles: Bundle[] = [];
+  let nextUrl: string | undefined = `${resourceType}?patient=${fhirClient.getPatientId()}${extra}`;
+  let bundleCount = 0;
+  let resourcesFetched = 0;
+  const MAX_PAGES = 1000; // Safety limit: ~10,000-50,000 resources depending on page size
+
+  while (nextUrl && bundleCount < MAX_PAGES) {
+    try {
+      const bundle = await fhirClient.request<Bundle>(nextUrl, { pageLimit: 1 });
+      if (bundle) {
+        resourcesFetched += bundle.entry?.length ?? 0;
+        bundles.push(bundle);
+        bundleCount++;
+        // Find the next page link
+        nextUrl = bundle.link?.find(link => link.relation === 'next')?.url;
+        if (nextUrl) console.log(`\tFetching next page: ${nextUrl}`);
+      } else {
+        nextUrl = undefined;
+      }
+    } catch (error) {
+      console.warn(
+        `Error fetching ${resourceType} page ${bundleCount + 1}:`,
+        error instanceof Error ? error.message : error
+      );
+      if (bundles.length > 0) {
+        console.warn(`Successfully fetched ${bundleCount} pages with ${resourcesFetched} resources before error.`);
+        console.warn('Unable to continue pagination - stopping here. Some data may be missing.');
+      } else {
+        console.warn(`No ${resourceType} data could be fetched before error.`);
+        console.warn(`Returning an empty array for ${resourceType}.`);
+      }
+      // Cannot get next URL from failed request, must stop pagination
+      break;
+    }
+  }
+
+  if (bundleCount >= MAX_PAGES) {
+    console.error(
+      `SAFETY LIMIT REACHED: Stopped at ${MAX_PAGES} pages for ${resourceType}. ` +
+        `Fetched ${resourcesFetched} resources. This may indicate an infinite pagination loop or data issue.`
+    );
+  } else {
+    console.log(`\tCompleted fetching ${resourceType}: ${bundleCount} pages, ${resourcesFetched} total resources`);
+  }
+
+  return bundles;
 };
 
 /**

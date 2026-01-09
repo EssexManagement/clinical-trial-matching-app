@@ -150,12 +150,12 @@ describe('fetchBundles()', () => {
     const requestSpy = createRequestSpy();
     const fhirClient = createMockFhirClient({ request: requestSpy });
     await fetchBundles(fhirClient, 'TestScript', { test: 'parameters' });
-    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient&test=parameters', { pageLimit: 0 });
+    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient&test=parameters', { pageLimit: 1 });
   });
   it('adds nothing to the query if no parameters are given', async () => {
     const requestSpy = createRequestSpy();
     const fhirClient = createMockFhirClient({ request: requestSpy });
     await fetchBundles(fhirClient, 'TestScript');
-    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient', { pageLimit: 0 });
+    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient', { pageLimit: 1 });
   });
 });

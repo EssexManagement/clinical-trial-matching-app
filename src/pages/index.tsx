@@ -16,7 +16,7 @@ const IndexPage = (): ReactElement => {
     if (loading) {
       setLoading(false);
       // Forward to the next page
-      window.location.assign('/search');
+      window.location.assign('/search'); // This is where errors can happen if the patient's data cannot be loaded
     }
   }, [loading]);
   return (
@@ -45,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   delete req.headers['x-forwarded-for'];
 
   try {
-    await smart(req, res).ready();
+    await smart(req, res).ready(); // Index '/' page will return 200 if SMART on FHIR launch is successful
 
     return { props: {} };
   } catch (e) {

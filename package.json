@@ -14,7 +14,7 @@
     "lint": "run-p --aggregate-output -c --max-parallel 2 lint:*",
     "lint:js": "eslint . --ext .js,.ts,.tsx",
     "lint:types": "tsc --noEmit",
-    "start:debug": "DEBUG='FHIR.*' node server.js",
+    "start:debug": "DEBUG='FHIR*' node server.js",
     "start": "node server.js",
     "test": "jest --watch",
     "test:ci": "jest --ci --maxWorkers=2 --coverage",
