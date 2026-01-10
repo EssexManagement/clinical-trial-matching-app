@@ -158,4 +158,91 @@ describe('fetchBundles()', () => {
     await fetchBundles(fhirClient, 'TestScript');
     expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient', { pageLimit: 1 });
   });
+
+  it('follows next links and returns multiple bundles', async () => {
+    const bundle1 = {
+      resourceType: 'Bundle',
+      type: 'searchset',
+      entry: [{ resource: { resourceType: 'Condition', id: 'c1' } }],
+      link: [{ relation: 'next', url: 'Condition?patient=test-patient&page=2' }],
+    };
+
+    const bundle2 = {
+      resourceType: 'Bundle',
+      type: 'searchset',
+      entry: [{ resource: { resourceType: 'Condition', id: 'c2' } }],
+      link: [],
+    };
+
+    const requestSpy = jest
+      .fn()
+      .mockImplementationOnce(async (url: string, options) => {
+        expect(url).toBe('Condition?patient=test-patient');
+        expect(options).toEqual({ pageLimit: 1 });
+        return bundle1;
+      })
+      .mockImplementationOnce(async (url: string, options) => {
+        expect(url).toBe('Condition?patient=test-patient&page=2');
+        expect(options).toEqual({ pageLimit: 1 });
+        return bundle2;
+      });
+
+    const fhirClient = createMockFhirClient({ request: requestSpy });
+    const bundles = await fetchBundles(fhirClient, 'Condition');
+
+    expect(bundles).toHaveLength(2);
+    expect(bundles[0]).toBe(bundle1);
+    expect(bundles[1]).toBe(bundle2);
+    expect(requestSpy).toHaveBeenCalledTimes(2);
+  });
+
+  describe('error handling', () => {
+    let warnSpy: jest.SpyInstance;
+
+    beforeEach(() => {
+      warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    });
+
+    afterEach(() => {
+      warnSpy.mockRestore();
+    });
+
+    it('logs no data message when first page fails', async () => {
+      const requestSpy = jest.fn().mockRejectedValue(new Error('boom'));
+      const fhirClient = createMockFhirClient({ request: requestSpy });
+
+      const bundles = await fetchBundles(fhirClient, 'Condition');
+
+      expect(bundles).toHaveLength(0);
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Error fetching Condition page 1:'),
+        expect.anything()
+      );
+      expect(warnSpy).toHaveBeenCalledWith('No Condition data could be fetched before error.');
+      expect(warnSpy).toHaveBeenCalledWith('Returning an empty array for Condition.');
+    });
+
+    it('logs summary after partial data when a later page fails', async () => {
+      const bundle = {
+        resourceType: 'Bundle',
+        type: 'searchset',
+        entry: [{ resource: { resourceType: 'Condition', id: 'c1' } }],
+        link: [{ relation: 'next', url: 'Condition?patient=test-patient&page=2' }],
+      };
+
+      const requestSpy = jest.fn().mockResolvedValueOnce(bundle).mockRejectedValueOnce(new Error('boom second'));
+
+      const fhirClient = createMockFhirClient({ request: requestSpy });
+      const bundles = await fetchBundles(fhirClient, 'Condition');
+
+      expect(bundles).toHaveLength(1);
+      expect(bundles[0]).toBe(bundle);
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Error fetching Condition page 2:'),
+        expect.anything()
+      );
+      expect(warnSpy).toHaveBeenCalledWith('Successfully fetched 1 pages with 1 resources before error.');
+      expect(warnSpy).toHaveBeenCalledWith('Unable to continue pagination - stopping here. Some data may be missing.');
+    });
+  });
 });
