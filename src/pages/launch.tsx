@@ -40,6 +40,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
     return {
       redirect: {
+        // redirect in Next.js results in a 307 status code
         destination: url,
         permanent: false,
       },
