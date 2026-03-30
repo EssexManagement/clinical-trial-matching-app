@@ -46,3 +46,11 @@ scripts/local/ctsapi_cancer_us_interventional_open_and_not_yet_open.xlsx
 scripts/local/~*.xlsx
 
 scripts/local/tmp
+.vscode/linenote/real_working_user/
+.vscode/linenote/src/utils/fhir/fetch.ts#L84.md
+errors_on_notice/
+errors_on_rollback/
+real_working_user/
+
+scripts/local/*.xlsx
+scripts/local/*.csv

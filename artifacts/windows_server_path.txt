@@ -1,0 +1,15 @@
+C:\Windows\system32
+C:\Windows
+C:\Windows\System32\Wbem
+C:\Windows\System32\WindowsPowerShell\v1.0\
+C:\Windows\System32\OpenSSH\
+C:\Program Files\Git\cmd
+C:\Program Files\nodejs\
+C:\ProgramData\chocolatey\bin
+C:\msys64\ucrt64\bin
+C:\Program Files\dotnet\
+C:\Program Files\GitHub CLI\
+C:\Program Files\Amazon\cfn-bootstrap\
+D:\Users\ccrouch\scoop\shims
+D:\Users\ccrouch\AppData\Local\Microsoft\WindowsApps
+D:\Users\ccrouch\AppData\Roaming\npm
