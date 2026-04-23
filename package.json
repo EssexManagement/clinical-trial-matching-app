@@ -43,7 +43,7 @@
     "react-hook-form": "^7.24.2",
     "react-query": "^3.23.2",
     "us-zips": "^2022.9.1",
-    "uuid": "^9.0.1"
+    "uuid": "^14.0.0"
   },
   "devDependencies": {
     "@emotion/jest": "^11.3.0",
